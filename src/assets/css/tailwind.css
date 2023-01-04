@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Your imports here */
+
+@import 'tailwindcss/utilities';
+
+svg {
+    fill: currentColor;
+}
