@@ -5,15 +5,15 @@ export default defineNuxtConfig({
 
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/google-fonts'],
 
-    googleFonts: {
-        download: true,
-        families: {
-            'DM+Sans': {
-                wght: [400, 500, 700],
-                ital: [400],
-            },
-        },
-    },
+    // googleFonts: {
+    //     download: true,
+    //     families: {
+    //         'DM+Sans': {
+    //             wght: [400, 500, 700],
+    //             ital: [400],
+    //         },
+    //     },
+    // },
 
     colorMode: {
         preference: 'system',

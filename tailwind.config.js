@@ -8,7 +8,8 @@ module.exports = {
         extend: {
             colors: { primary: colors.sky },
             fontFamily: {
-                sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+                sans: [...defaultTheme.fontFamily.sans],
+                // sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
             },
         },
     },
