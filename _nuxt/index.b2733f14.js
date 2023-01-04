@@ -1,1 +1,0 @@
-import{a as t,b as e,o as n}from"./entry.f1775123.js";const o={},c={class:"text-2xl text-center font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"};function s(a,r){return n(),e("h1",c," Site under constuction ")}const _=t(o,[["render",s]]);export{_ as default};
