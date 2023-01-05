@@ -1,0 +1,1 @@
+import{J as e,o as t,D as o,I as s,S as r}from"./entry.f6244bfc.js";const n={},a={class:"p-4 lg:px-8 text-center w-full max-w-screen-xl mx-auto"};function c(l,_){return t(),o("footer",a,[s("div",null,"\xA9 "+r(new Date().getFullYear())+" - Tous droits r\xE9serv\xE9s.",1)])}const x=e(n,[["render",c]]);export{x as default};
