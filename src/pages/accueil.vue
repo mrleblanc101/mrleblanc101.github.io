@@ -22,15 +22,24 @@
             </div>
         </section>
         <section class="max-w-screen-xl mx-auto px-4 my-16 lg:px-8">
-            <h2 class="font-marvin text-4xl">Réalisations récentes</h2>
-            <ul>
-                <li v-for="realisation in realisations">
-                    <nuxt-link class="hover:underline" :to="realisation._path">{{ realisation.title }}</nuxt-link>
+            <h2 class="font-marvin text-4xl mb-4">Réalisations récentes</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <li
+                    class="relative after:content-[''] after:absolute after:top-[38%] after:bottom-0 after:w-full after:bg-gradient-to-t after:from-black after:to-transparent z-10"
+                    v-for="realisation in realisations"
+                >
+                    <a :href="realisation.url" target="_blank">
+                        <img :src="`${realisation._path}/thumbnail.jpg`" />
+                        <div class="absolute p-6 bottom-0 left-0 w-full z-50">
+                            <img :src="`${realisation._path}/logo.svg`" />
+                        </div>
+                        <div hidden class="absolute">{{ realisation.title }}</div>
+                    </a>
                 </li>
             </ul>
         </section>
         <section class="max-w-screen-xl mx-auto px-4 my-16 lg:px-8">
-            <h2 class="font-marvin text-4xl">Articles récents</h2>
+            <h2 class="font-marvin text-4xl mb-4">Articles récents</h2>
             <ul>
                 <li v-for="article in articles">
                     <nuxt-link class="hover:underline" :to="article._path">{{ article.title }}</nuxt-link>

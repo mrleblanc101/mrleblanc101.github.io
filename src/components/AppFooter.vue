@@ -1,6 +1,6 @@
 <template>
     <footer class="p-4 lg:px-8 text-center w-full max-w-screen-xl mx-auto">
-        <div>&copy; {{ new Date().getFullYear() }} - Tous droits réservés.</div>
+        <div>&copy; {{ new Date().getFullYear() }} Sébastien LeBlanc. Tous droits réservés.</div>
     </footer>
 </template>
 
