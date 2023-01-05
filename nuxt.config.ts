@@ -3,7 +3,7 @@ import ViteSvgLoader from 'vite-svg-loader';
 export default defineNuxtConfig({
     srcDir: 'src/',
 
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content'],
 
     colorMode: {
         preference: 'system',

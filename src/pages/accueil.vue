@@ -21,10 +21,28 @@
                 />
             </div>
         </section>
-        <!-- <section class="flex flex-col relative min-h-screen max-w-screen-xl mx-auto"></section> -->
+        <section class="max-w-screen-xl mx-auto px-4 my-16 lg:px-8">
+            <h2 class="font-marvin text-4xl">Réalisations récentes</h2>
+            <ul>
+                <li v-for="realisation in realisations">
+                    <nuxt-link class="hover:underline" :to="realisation._path">{{ realisation.title }}</nuxt-link>
+                </li>
+            </ul>
+        </section>
+        <section class="max-w-screen-xl mx-auto px-4 my-16 lg:px-8">
+            <h2 class="font-marvin text-4xl">Articles récents</h2>
+            <ul>
+                <li v-for="article in articles">
+                    <nuxt-link class="hover:underline" :to="article._path">{{ article.title }}</nuxt-link>
+                </li>
+            </ul>
+        </section>
     </main>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { data: articles } = await useAsyncData('articles', () => queryContent('/blog').find());
+const { data: realisations } = await useAsyncData('realisations', () => queryContent('/realisations').find());
+</script>
 
 <style lang="postcss" scoped></style>

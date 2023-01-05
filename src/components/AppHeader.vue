@@ -1,21 +1,18 @@
 <template>
     <header class="bg-zinc-100 dark:bg-zinc-800">
         <div class="max-w-screen-xl flex gap-10 justify-between items-center w-full mx-auto p-4 lg:px-8">
-            <div class="text-3xl font-black font-marvin">mrleblanc101</div>
+            <nuxt-link to="/accueil" class="text-3xl font-marvin">mrleblanc101</nuxt-link>
             <div class="flex items-center gap-10">
                 <nav class="hidden lg:block">
                     <ul class="flex gap-12 font-medium">
                         <li>
-                            <nuxt-link to="/">Accueil</nuxt-link>
+                            <nuxt-link class="hover:underline" to="/blog">Blog</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link to="/">Blog</nuxt-link>
+                            <nuxt-link class="hover:underline" to="/realisations">Réalisation</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link to="/">Réalisation</nuxt-link>
-                        </li>
-                        <li>
-                            <nuxt-link to="/">A propos</nuxt-link>
+                            <nuxt-link class="hover:underline" to="/a-propos">À propos</nuxt-link>
                         </li>
                     </ul>
                 </nav>
