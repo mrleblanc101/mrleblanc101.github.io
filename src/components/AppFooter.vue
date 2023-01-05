@@ -1,7 +1,6 @@
 <template>
-    <footer class="p-4 text-center w-full max-w-screen-xl mx-auto">
-        <div>&copy; {{ new Date().getFullYear() }}. Tous droits réservés.</div>
-        <div>Made in Québec.</div>
+    <footer class="p-4 lg:px-8 text-center w-full max-w-screen-xl mx-auto">
+        <div>&copy; {{ new Date().getFullYear() }} - Tous droits réservés.</div>
     </footer>
 </template>
 

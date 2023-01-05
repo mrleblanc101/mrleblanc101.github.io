@@ -3,17 +3,7 @@ import ViteSvgLoader from 'vite-svg-loader';
 export default defineNuxtConfig({
     srcDir: 'src/',
 
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/google-fonts'],
-
-    // googleFonts: {
-    //     download: true,
-    //     families: {
-    //         'DM+Sans': {
-    //             wght: [400, 500, 700],
-    //             ital: [400],
-    //         },
-    //     },
-    // },
+    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
 
     colorMode: {
         preference: 'system',

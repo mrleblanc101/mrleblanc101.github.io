@@ -6,11 +6,12 @@ module.exports = {
     darkMode: 'class',
     theme: {
         extend: {
-            colors: { primary: colors.sky },
+            colors: { primary: colors.zinc },
             fontFamily: {
+                marvin: ['MarvinVisions', ...defaultTheme.fontFamily.sans],
                 sans: [...defaultTheme.fontFamily.sans],
-                // sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
             },
         },
     },
+    plugins: [require('@tailwindcss/typography')],
 };

@@ -32,7 +32,7 @@ useHead({
     //     },
     // ],
     bodyAttrs: {
-        class: 'antialiased overflow-x-clip text-gray-700 leading-normal bg-white dark:bg-gray-900 dark:text-gray-300',
+        class: 'antialiased overflow-x-clip text-gray-700 leading-normal bg-white dark:bg-zinc-900 dark:text-gray-300',
     },
 });
 </script>
