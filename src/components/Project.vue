@@ -1,6 +1,6 @@
 <template>
     <li
-        class="relative after:content-[''] after:absolute after:top-[38%] after:bottom-0 after:w-full after:bg-gradient-to-t after:from-black after:to-transparent after:pointer-events-none z-10"
+        class="relative rounded overflow-hidden after:content-[''] after:absolute after:top-[38%] after:bottom-0 after:w-full after:bg-gradient-to-t after:from-black after:to-transparent after:pointer-events-none z-10"
     >
         <a :href="project.url" target="_blank">
             <img

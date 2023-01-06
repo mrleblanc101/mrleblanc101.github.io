@@ -5,7 +5,7 @@
         }"
     >
         <nuxt-link
-            class="block p-10 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+            class="block rounded p-10 border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700"
             :to="post._path"
         >
             <div>6 janvier 2023</div>

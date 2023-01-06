@@ -2,7 +2,7 @@
     <div class="min-h-screen flex flex-col">
         <AppHeader />
         <main class="grow w-full">
-            <article class="prose md:prose-xl dark:prose-invert max-w-screen-xl mx-auto p-4 lg:px-8 lg:py-16 z-0">
+            <article class="max-w-screen-xl mx-auto p-4 lg:px-8 lg:py-16 z-0">
                 <slot></slot>
             </article>
         </main>
