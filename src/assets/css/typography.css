@@ -2,4 +2,5 @@
     font-family: 'MarvinVisions';
     src: url('@/assets/fonts/MarvinVisions-Bold.woff2') format('woff2'),
         url('@/assets/fonts/MarvinVisions-Bold.woff') format('woff');
+    font-display: swap;
 }

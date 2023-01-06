@@ -1,7 +1,7 @@
 <template>
     <header class="bg-zinc-100 dark:bg-zinc-800">
         <div class="max-w-screen-xl flex gap-10 justify-between items-center w-full mx-auto p-4 lg:px-8">
-            <nuxt-link to="/accueil" class="text-3xl font-marvin">mrleblanc101</nuxt-link>
+            <nuxt-link to="/" class="text-2xl lg:text-3xl font-marvin font-black uppercase">mrleblanc101</nuxt-link>
             <div class="flex items-center gap-10">
                 <nav class="hidden lg:block">
                     <ul class="flex gap-12 font-medium">
@@ -9,7 +9,7 @@
                             <nuxt-link class="hover:underline" to="/blog">Blog</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link class="hover:underline" to="/realisations">Réalisation</nuxt-link>
+                            <nuxt-link class="hover:underline" to="/projets">Projets</nuxt-link>
                         </li>
                         <li>
                             <nuxt-link class="hover:underline" to="/a-propos">À propos</nuxt-link>
@@ -20,7 +20,7 @@
                     <ColorSwitcher />
                     <button
                         type="button"
-                        class="flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white dark:text-gray-800 items-center justify-center font-bold h-10 w-10 text-sm inline-flex lg:hidden"
+                        class="flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex lg:hidden"
                         @click.stop="menuOpened = !menuOpened"
                     >
                         <IHamburger v-if="!menuOpened" class="w-4 h-4" />
