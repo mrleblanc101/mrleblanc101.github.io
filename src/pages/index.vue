@@ -68,8 +68,8 @@
 import IGithub from '@/assets/svg/github.svg?component';
 import ILinkedIn from '@/assets/svg/linkedin.svg?component';
 
-const { data: posts } = await useAsyncData('posts', () => queryContent('/blog').limit(3).find());
 const { data: projects } = await useAsyncData('projets', () => queryContent('/projets').limit(4).find());
+const { data: posts } = await useAsyncData('posts', () => queryContent('/blog').limit(3).find());
 </script>
 
 <style lang="postcss" scoped></style>
