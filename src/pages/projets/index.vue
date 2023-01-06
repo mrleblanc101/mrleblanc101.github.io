@@ -16,13 +16,19 @@
 
 <script lang="ts" setup>
 const { data: libeo_projects } = await useAsyncData('libeo_projects', () =>
-    queryContent('/projets')
-        .where({ group: { $exists: false } })
+    queryContent('/projets/libeo')
+        .sort({
+            order: -1,
+            $numeric: true,
+        })
         .find(),
 );
 const { data: personnal_projects } = await useAsyncData('personnal_projects', () =>
-    queryContent('/projets')
-        .where({ group: { $eq: 'perso' } })
+    queryContent('/projets/perso')
+        .sort({
+            order: -1,
+            $numeric: true,
+        })
         .find(),
 );
 </script>
