@@ -9,7 +9,7 @@
             :to="prev._path"
         >
             <div class="opacity-70 font-medium">Précédent</div>
-            <div class="font-black text-xl">{{ next.title }}</div>
+            <div class="font-black text-xl">{{ prev.title }}</div>
         </NuxtLink>
         <NuxtLink
             class="md:ml-auto p-10 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded"
