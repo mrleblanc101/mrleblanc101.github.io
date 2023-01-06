@@ -10,7 +10,7 @@
                 height="365"
             />
             <div class="absolute p-3 md:p-6 bottom-0 left-0 w-full z-50">
-                <img :src="`${project._path}/logo.svg`" />
+                <img class="max-h-[65px]" :src="`${project._path}/logo.svg`" />
             </div>
             <div hidden class="absolute">{{ project.title }}</div>
         </a>
@@ -26,5 +26,3 @@ defineProps({
     },
 });
 </script>
-
-<style lang="postcss" scoped></style>
