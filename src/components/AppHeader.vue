@@ -6,13 +6,13 @@
                 <nav class="hidden lg:block">
                     <ul class="flex gap-12 font-medium">
                         <li>
-                            <nuxt-link class="hover:underline" to="/blog">Blog</nuxt-link>
+                            <nuxt-link to="/blog">Blog</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link class="hover:underline" to="/projets">Projets</nuxt-link>
+                            <nuxt-link to="/projets">Projets</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link class="hover:underline" to="/a-propos">À propos</nuxt-link>
+                            <nuxt-link to="/a-propos">À propos</nuxt-link>
                         </li>
                     </ul>
                 </nav>
@@ -20,7 +20,7 @@
                     <ColorSwitcher />
                     <button
                         type="button"
-                        class="flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex lg:hidden"
+                        class="flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex lg:hidden transition"
                         @click.stop="menuOpened = !menuOpened"
                     >
                         <IHamburger v-if="!menuOpened" class="w-4 h-4" />
