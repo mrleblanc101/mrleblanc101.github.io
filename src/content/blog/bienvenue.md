@@ -1,7 +1,7 @@
 ---
 title: Bienvenue sur mon site web !
 pinned: true
-createdAt: 2023-01-01T00:00:00.000Z
+createdAt: 2023-01-01
 ---
 
 Nouvelle année, nouvelle résolution !

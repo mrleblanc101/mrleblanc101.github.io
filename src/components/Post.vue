@@ -47,6 +47,6 @@ const props = defineProps({
 });
 
 function formatDate(date: Date) {
-    return new Date(date).toLocaleDateString('fr', { year: 'numeric', month: 'long', day: 'numeric' });
+    return new Date(date).toLocaleDateString('fr', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' });
 }
 </script>

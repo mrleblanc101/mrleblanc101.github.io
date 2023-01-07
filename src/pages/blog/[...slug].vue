@@ -44,7 +44,7 @@ const route = useRoute();
 const [prev, next] = await queryContent('/blog').findSurround(route.fullPath);
 
 function formatDate(date: Date) {
-    return new Date(date).toLocaleDateString('fr', { year: 'numeric', month: 'long', day: 'numeric' });
+    return new Date(date).toLocaleDateString('fr', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' });
 }
 function formatDuration(minutes: number) {
     return Math.ceil(minutes);
