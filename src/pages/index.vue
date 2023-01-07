@@ -51,7 +51,7 @@
     <section class="max-w-screen-xl w-full mx-auto px-4 my-16 lg:px-8">
         <h2 class="font-marvin font-black uppercase text-5xl mb-4 tracking-wide">Articles récents</h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 -mx-10">
-            <Post v-for="(post, i) in posts" :post="post" :index="i" />
+            <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
         </ul>
         <div class="text-center">
             <nuxt-link
@@ -77,7 +77,15 @@ const { data: projects } = await useAsyncData('projets', () =>
         })
         .find(),
 );
-const { data: posts } = await useAsyncData('posts', () => queryContent('/blog').limit(3).find());
-</script>
 
-<style lang="postcss" scoped></style>
+const { data: posts } = await useAsyncData('posts', () =>
+    queryContent('/blog')
+        .sort({
+            createdAt: -1,
+            pinned: 1,
+            $numeric: true,
+        })
+        .limit(3)
+        .find(),
+);
+</script>

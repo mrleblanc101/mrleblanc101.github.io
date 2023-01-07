@@ -8,5 +8,13 @@
 </template>
 
 <script lang="ts" setup>
-const { data: posts } = await useAsyncData('posts', () => queryContent('/blog').find());
+const { data: posts } = await useAsyncData('posts', () =>
+    queryContent('/blog')
+        .sort({
+            createdAt: -1,
+            pinned: 1,
+            $numeric: true,
+        })
+        .find(),
+);
 </script>

@@ -1,3 +1,11 @@
-# Bienvenue sur mon site personnel
+---
+title: Bienvenue sur mon site web !
+pinned: true
+createdAt: 2023-01-01T00:00:00.000Z
+---
 
-Voluptas dolorem aut odio. Fugit earum provident repudiandae aliquid ipsam eaque consectetur quis tenetur. Quo tempora cupiditate non reprehenderit dolor fugiat ipsam similique. Dolores perspiciatis tenetur voluptas earum delectus nisi maxime quia culpa ipsum labore. Laudantium dicta tempora sint sed rerum quae reprehenderit quia voluptatem sint omnis quae ut in eos. Nobis fuga ratione et veritatis voluptatibus nesciunt quo dolorum suscipit doloremque. Dignissimos aspernatur nobis quam perspiciatis consequatur inventore delectus corporis dolores et dolorem exercitationem. Enim accusantium dolore quos et expedita qui odit deserunt enim pariatur.
+Nouvelle année, nouvelle résolution !
+
+Après pas mal de procrastination, je me suis dit qu'il était enfin temps de refaire mon site personnel de zéro.
+
+En tant qu'à y être, de tester `nuxt@^3.0.0` et `nuxt/content@^2.0.0` pour générer un site statique afin de hoster mon site gratuitement sur Github Pages.

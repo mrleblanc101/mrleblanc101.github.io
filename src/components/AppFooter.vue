@@ -3,7 +3,3 @@
         <div>&copy; {{ new Date().getFullYear() }} Sébastien LeBlanc. Tous droits réservés.</div>
     </footer>
 </template>
-
-<script lang="ts" setup></script>
-
-<style lang="postcss" scoped></style>

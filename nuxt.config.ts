@@ -5,6 +5,12 @@ export default defineNuxtConfig({
 
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content'],
 
+    content: {
+        markdown: {
+            remarkPlugins: ['remark-reading-time'],
+        },
+    },
+
     colorMode: {
         preference: 'system',
         fallback: 'dark',

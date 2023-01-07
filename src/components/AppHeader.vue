@@ -1,7 +1,9 @@
 <template>
     <header class="bg-zinc-100 dark:bg-zinc-800">
         <div class="max-w-screen-xl flex gap-10 justify-between items-center w-full mx-auto p-4 lg:px-8">
-            <nuxt-link to="/" class="text-2xl lg:text-3xl font-marvin font-black uppercase">mrleblanc101</nuxt-link>
+            <nuxt-link to="/" class="text-black dark:text-white text-2xl lg:text-3xl font-marvin font-black uppercase"
+                >mrleblanc101</nuxt-link
+            >
             <div class="flex items-center gap-10">
                 <nav class="hidden lg:block">
                     <ul class="flex gap-12 font-medium">
