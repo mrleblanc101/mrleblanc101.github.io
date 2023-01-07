@@ -3,13 +3,13 @@
         <div class="flex flex-col relative justify-center max-w-screen-xl mx-auto p-4 lg:px-8 z-0">
             <div class="md:-mt-24 md:absolute lg:mt-0">
                 <h1
-                    class="font-marvin font-black text-5xl md:text-7xl lg:text-8xl xl:text-[7rem] uppercase leading-[1]"
+                    class="font-marvin font-black text-3xl md:text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase leading-[1] tracking-wide"
                 >
-                    Développeur<br />
-                    Front-end
+                    Sébastien<br />
+                    LeBlanc
                 </h1>
-                <div class="max-w-[480px] text-xl leading-7 mt-8 lg:mb-0">
-                    Bonjour, je suis Sébastien LeBlanc ! <br />
+                <div class="max-w-[480px] md:text-xl leading-6 md:leading-7 mt-8 lg:mb-0">
+                    Bonjour, je suis développeur Front-End !<br />
                     Je conçois des produits numériques depuis 2017.
                 </div>
                 <div class="absolute md:static inline-flex gap-5 my-6">
@@ -35,7 +35,7 @@
         </div>
     </section>
     <section class="max-w-screen-xl w-full mx-auto px-4 my-16 lg:px-8">
-        <h2 class="font-marvin font-black uppercase text-5xl mb-4 tracking-wide">Projets récents</h2>
+        <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">Projets récents</h2>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Project v-for="projet in projects" :project="projet" />
         </ul>
@@ -49,8 +49,8 @@
         </div>
     </section>
     <section class="max-w-screen-xl w-full mx-auto px-4 my-16 lg:px-8">
-        <h2 class="font-marvin font-black uppercase text-5xl mb-4 tracking-wide">Articles récents</h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 -mx-10">
+        <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">Articles récents</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
         </ul>
         <div class="text-center">

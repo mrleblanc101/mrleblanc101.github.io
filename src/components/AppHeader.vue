@@ -21,15 +21,27 @@
                         >
                             <IClose class="w-6 h-6" />
                         </button>
-                        <ul class="flex flex-col md:flex-row gap-6 md:gap-12 font-medium">
+                        <ul class="flex flex-col md:flex-row md:gap-12 font-medium">
                             <li>
-                                <nuxt-link to="/blog">Blog</nuxt-link>
+                                <nuxt-link
+                                    class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
+                                    to="/blog"
+                                    >Blog</nuxt-link
+                                >
                             </li>
                             <li>
-                                <nuxt-link to="/projets">Projets</nuxt-link>
+                                <nuxt-link
+                                    class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
+                                    to="/projets"
+                                    >Projets</nuxt-link
+                                >
                             </li>
                             <li>
-                                <nuxt-link to="/a-propos">À propos</nuxt-link>
+                                <nuxt-link
+                                    class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
+                                    to="/a-propos"
+                                    >À propos</nuxt-link
+                                >
                             </li>
                         </ul>
                     </nav>

@@ -5,7 +5,7 @@
         }"
     >
         <nuxt-link
-            class="flex flex-col rounded p-10 border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition h-full"
+            class="flex flex-col rounded p-6 border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition h-full"
             :to="post._path"
         >
             <div v-if="post.pinned" class="flex items-center text-lg gap-2 font-medium">
