@@ -1,1 +1,0 @@
-import"./ColorSwitcher.vue_vue_type_script_setup_true_lang.f8107aae.js";import{_ as f}from"./ColorSwitcher.vue_vue_type_script_setup_true_lang.f8107aae.js";import"./component.vue3.aea92deb.js";import"./client-only.b9ec577c.js";import"./entry.b5cd0639.js";export{f as default};
