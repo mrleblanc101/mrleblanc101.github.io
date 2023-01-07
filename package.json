@@ -20,5 +20,8 @@
         "prettier": "^2.8.1",
         "remark-reading-time": "^2.0.1",
         "vite-svg-loader": "^4.0.0"
+    },
+    "dependencies": {
+        "vue-collapsed": "^1.1.0"
     }
 }

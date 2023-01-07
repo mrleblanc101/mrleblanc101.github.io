@@ -1,6 +1,8 @@
 <template>
     <li
-        class="relative rounded overflow-hidden after:content-[''] after:absolute after:top-[38%] after:bottom-0 after:w-full after:bg-gradient-to-t after:from-black after:to-transparent after:pointer-events-none z-10 bg-zinc-100 dark:bg-zinc-800"
+        class="group relative rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800"
+        @mouseenter="is_expanded = true"
+        @mouseleave="is_expanded = false"
     >
         <component
             :is="project.url ? 'a' : 'div'"
@@ -16,16 +18,26 @@
                 :alt="`Image: ${project.title}`"
                 loading="lazy"
             />
-            <div class="absolute p-3 md:p-6 bottom-0 left-0 w-full z-50">
-                <img class="max-h-[65px]" :src="`${project._path}/logo.svg`" :alt="`Logo: ${project.title}`" />
-                <div hidden class="absolute">{{ project.title }}</div>
+            <div
+                class="after:content-[''] after:absolute after:-top-[100%] after:bottom-0 after:-left-3 after:-right-3 md:after:-left-6 md:after:-right-6 after:bg-gradient-to-t after:from-black/70 after:to-transparent after:pointer-events-none absolute p-3 md:p-6 bottom-0 left-0 w-full after:-z-10 z-50"
+            >
+                <img class="relative max-h-[60px]" :src="`${project._path}/logo.svg`" :alt="`Logo: ${project.title}`" />
+                <Collapse :when="is_expanded" class="v-collapsed">
+                    <div class="mt-4">
+                        Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum
+                        dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit
+                        amet non magna. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta
+                        gravida at eget metus.
+                    </div>
+                </Collapse>
             </div>
         </component>
     </li>
 </template>
 
 <script lang="ts" setup>
-const config = useRuntimeConfig();
+const is_expanded = ref(false);
+
 defineProps({
     project: {
         type: Object,
@@ -34,3 +46,9 @@ defineProps({
     },
 });
 </script>
+
+<style lang="postcss" scoped>
+.v-collapsed {
+    transition: height var(--vc-auto-duration) cubic-bezier(0.3, 0, 0.6, 1);
+}
+</style>
