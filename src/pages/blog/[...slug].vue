@@ -15,11 +15,11 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-screen-xl mx-auto p-4 lg:px-8 lg:py-16 z-0">
-            <ContentRenderer class="prose lg:prose-xl dark:prose-invert" :value="doc" />
-            <div class="flex flex-col md:flex-row gap-4 mt-16 px-10 -mx-20 -mx-10">
+        <div class="max-w-screen-xl mx-auto px-4 py-8 lg:px-8 lg:py-16 z-0">
+            <ContentRenderer class="prose prose-xl dark:prose-invert" :value="doc" />
+            <div class="flex flex-col md:flex-row gap-4 mt-8 md:mt-16">
                 <NuxtLink
-                    class="md:mr-auto p-10 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded transition"
+                    class="md:mr-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded transition w-full md:max-w-sm"
                     v-if="prev"
                     :to="prev._path"
                 >
@@ -27,7 +27,7 @@
                     <div class="font-black text-xl">{{ prev.title }}</div>
                 </NuxtLink>
                 <NuxtLink
-                    class="md:ml-auto p-10 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded transition"
+                    class="md:ml-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded transition w-full md:max-w-sm"
                     v-if="next"
                     :to="next._path"
                 >

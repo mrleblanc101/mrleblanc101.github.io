@@ -8,4 +8,5 @@
 
 svg {
     fill: currentColor;
+    pointer-events: none;
 }
