@@ -1,0 +1,1 @@
+import{Q as e,o as t,D as s,I as o,L as n}from"./entry.5db43e9e.js";const a={},r={class:"p-4 lg:px-8 text-center w-full max-w-screen-xl mx-auto"};function c(l,_){return t(),s("footer",r,[o("div",null,"\xA9 "+n(new Date().getFullYear())+" S\xE9bastien LeBlanc. Tous droits r\xE9serv\xE9s.",1)])}const u=e(a,[["render",c]]);export{u as default};
