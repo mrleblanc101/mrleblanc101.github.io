@@ -3,3 +3,5 @@ url: false
 order: 8
 description:
 tags:
+- Django
+- Foundation

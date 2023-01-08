@@ -1,3 +1,9 @@
 title: Agence Hélium
 url: https://agencehelium.com/
 order: 2
+description:
+tags:
+- SSG
+- Nuxt.js 2
+- Vue.js 2
+- Nuxt Content

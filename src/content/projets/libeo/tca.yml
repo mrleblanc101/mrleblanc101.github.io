@@ -3,3 +3,5 @@ url: https://chaudiereappalaches.com/
 order: 2
 description:
 tags:
+- Django Template
+- Django CMS

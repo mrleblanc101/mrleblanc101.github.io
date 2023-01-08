@@ -6300,10 +6300,10 @@ vue-bundle-renderer@^1.0.0:
   dependencies:
     ufo "^1.0.0"
 
-vue-collapsed@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vue-collapsed/-/vue-collapsed-1.1.0.tgz#6394a1d74e3af0b44d35d1e4a92ad37edd5ea823"
-  integrity sha512-Wl7TAC2yJTtuRJkdn+xyk+5FUMBBfD+7jXTDTSCqZdzqqbA00m7NV9DkIxuTD2z1B0BikdQKkHDrWaPPY+WFlQ==
+vue-collapsed@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-collapsed/-/vue-collapsed-1.1.1.tgz#d83c29dc67a178df06aea373e3a82eba0d2a7231"
+  integrity sha512-dkKZjN0odUXODUwef943wHUSN0IcEuSNpF8s/ZKmCqMuRXsihnPxStECD/9efr05FJFao8ihWTlmBz1b5RTFVg==
 
 vue-demi@*:
   version "0.13.11"

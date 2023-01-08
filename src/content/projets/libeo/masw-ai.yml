@@ -3,3 +3,5 @@ url: https://masw.ai/
 order: 15
 description:
 tags:
+- Vue.js 2
+- Nuxt.js 2

@@ -1,3 +1,9 @@
 title: NeoBigben
 url: https://mrleblanc101.github.io/neobigben/
 order: 3
+description:
+tags:
+- SSG
+- Nuxt.js 3
+- Vue.js 3
+- Tailwindcss

@@ -3,3 +3,7 @@ url: https://chrome.google.com/webstore/detail/cira-canadian-shield/ooeeeeagdccj
 order: 16
 description:
 tags:
+- Chrome
+- Firefox
+- WebExtension
+- Manifest v3
