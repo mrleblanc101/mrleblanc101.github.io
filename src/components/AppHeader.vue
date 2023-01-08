@@ -82,12 +82,3 @@ function onClickOutside(event: MouseEvent) {
     if (event.target !== menuBtn.value) menuOpened.value = false;
 }
 </script>
-
-<style lang="postcss" scoped>
-a {
-    width: calc(100% + 5px);
-}
-.router-link-exact-active {
-    @apply font-bold;
-}
-</style>
