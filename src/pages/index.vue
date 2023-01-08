@@ -3,7 +3,7 @@
         <div class="flex flex-col relative justify-center max-w-screen-xl mx-auto p-4 lg:px-8 z-0">
             <div class="md:-mt-24 md:absolute lg:mt-0">
                 <h1
-                    class="font-marvin font-black text-3xl md:text-5xl md:text-7xl lg:text-8xl xl:text-9xl uppercase leading-[1] tracking-wide"
+                    class="font-marvin font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase leading-[1] tracking-wide"
                 >
                     Sébastien<br />
                     LeBlanc

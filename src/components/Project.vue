@@ -1,9 +1,10 @@
 <template>
     <li
+        ref="elementRef"
         class="group relative rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800"
-        @mouseenter="is_expanded = true"
-        @mouseleave="is_expanded = false"
-        @touchend="onTap"
+        @mouseenter="sharedState.elementRef = elementRef"
+        @mouseleave="sharedState.elementRef = null"
+        @touchstart="onTap"
     >
         <!-- <div class="absolute p-4 text-2xl top-0 left-0 bg-red-500 text-white">{{ project.order }}</div> -->
         <img
@@ -14,14 +15,14 @@
             :alt="`Image: ${project.title}`"
             loading="lazy"
         />
-        <div class="absolute top-0 bottom-0 left-0 w-full z-50 overflow-y-auto flex flex-col">
+        <div class="absolute top-0 bottom-0 left-0 w-full z-10 overflow-y-auto flex flex-col">
             <div
-                class="relative mt-auto p-4 md:p-6 after:content-[''] after:absolute after:-top-[100%] after:bottom-0 after:left-0 after:right-0 after:bg-gradient-to-t after:from-black/70 after:to-transparent after:-z-10 after:pointer-events-none"
+                class="relative mt-auto p-4 md:px-5 md:py-4 after:content-[''] after:absolute after:-top-[100%] after:bottom-0 after:left-0 after:right-0 after:bg-gradient-to-t after:from-black/80 after:to-transparent after:-z-10 after:pointer-events-none"
             >
                 <img class="max-h-[60px]" :src="`${project._path}/logo.svg`" :alt="`Logo: ${project.title}`" />
             </div>
             <Collapse :when="is_expanded" class="v-collapse">
-                <div class="p-4 md:p-6 pt-0 md:pt-0 bg-black/70 flex flex-col gap-3">
+                <div class="p-4 md:px-5 md:py-4 pt-0 md:pt-0 bg-black/80 flex flex-col gap-3">
                     <div v-if="project.description" class="text-gray-300">
                         {{ project.description }}
                     </div>
@@ -37,7 +38,7 @@
                         v-if="project.url"
                         :href="project.url"
                         target="_blank"
-                        class="inline-flex gap-1 hover:gap-2 font-bold transition-all before:content-[''] before:block [@media(any-hover:hover)]:before:absolute [@media(any-hover:hover)]:before:inset-0"
+                        class="inline-flex gap-1 hover:gap-2 font-bold transition-all delay-300 before:content-[''] before:block [@media(any-hover:hover)]:before:absolute [@media(any-hover:hover)]:before:inset-0 text-gray-300"
                     >
                         Voir le projet <IArrowRight class="w-5" />
                     </a>
@@ -47,9 +48,19 @@
     </li>
 </template>
 
+<script lang="ts">
+const sharedState = ref({
+    elementRef: null,
+});
+</script>
+
 <script lang="ts" setup>
 import IArrowRight from '@/assets/svg/arrow-right.svg?component';
-const is_expanded = ref(false);
+
+const elementRef = ref(null);
+const is_expanded = computed(() => {
+    return (elementRef.value && sharedState.value.elementRef === elementRef.value) || false;
+});
 
 defineProps({
     project: {
@@ -60,7 +71,7 @@ defineProps({
 });
 
 function onTap(event: TouchEvent) {
-    is_expanded.value = !is_expanded.value;
+    sharedState.value.elementRef = elementRef.value;
 }
 </script>
 

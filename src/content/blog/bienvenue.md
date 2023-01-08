@@ -1,6 +1,5 @@
 ---
 title: Bienvenue sur mon site web !
-pinned: true
 createdAt: 2023-01-01
 ---
 

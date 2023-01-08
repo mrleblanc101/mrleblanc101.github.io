@@ -1,6 +1,7 @@
 title: Comité patronal de négociation du secteur de la santé et des services sociaux
 url: https://cpnsss.gouv.qc.ca/
 order: 7
-description:
+description: Le Comité patronal de négociation du secteur de la santé et des services sociaux (CPNSSS) s'offre un nouveau site moderne et responsive qui permettera aux membres de consultés leurs documents de manière sécurisée afin de répondre à leurs questions sur les conditions de travail lié au domaine.
 tags:
 - Typo3
+- Auth

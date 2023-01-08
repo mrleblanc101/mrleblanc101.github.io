@@ -1,7 +1,7 @@
-title: VisezEau
+title: VisezEau à l'école
 url: false
 order: 10
-description:
+description: La plateforme VisezEau permet aux parents et enfants de la 3e à la 6e année du primaire de fournir les reseignements nécessaire au bon déroulement du programme qui a pour but de mettre en valeur l’eau potable non embouteillée comme alternative aux boissons sucrées
 tags:
 - Vue.js 2
 - Nuxt.js 2
