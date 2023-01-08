@@ -5,3 +5,5 @@ description:
 tags:
 - Vue.js 2
 - Nuxt.js 2
+- Auth
+- i18n

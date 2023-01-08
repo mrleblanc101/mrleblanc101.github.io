@@ -22,13 +22,10 @@
             </div>
             <Collapse :when="is_expanded" class="v-collapse">
                 <div class="p-4 md:p-6 pt-0 md:pt-0 bg-black/70 flex flex-col gap-3">
-                    <!-- <div class="text-gray-300">
-                            Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem
-                            ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
-                            blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Donec id elit
-                            non mi porta gravida at eget metus.
-                        </div> -->
-                    <ul class="flex flex-wrap gap-2">
+                    <div v-if="project.description" class="text-gray-300">
+                        {{ project.description }}
+                    </div>
+                    <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
                         <li
                             v-for="tag in project.tags"
                             class="inline-block px-4 py-2 bg-gray-200 text-gray-700 font-medium text-xs uppercase rounded-full shadow-md whitespace-nowrap"
