@@ -19,7 +19,7 @@
             <div v-if="index !== 0 && !post.pinned" class="font-medium opacity-60">
                 {{ formatDate(post.createdAt) }}
             </div>
-            <h2 class="font-black text-3xl my-1 last:mb-0">{{ post.title }}</h2>
+            <h2 class="font-black text-xl md:text-3xl my-1 last:mb-0">{{ post.title }}</h2>
             <div v-if="index === 0 || post.pinned" class="font-medium opacity-60">{{ formatDate(post.createdAt) }}</div>
         </nuxt-link>
     </li>

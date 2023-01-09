@@ -50,7 +50,7 @@
     </section>
     <section class="max-w-screen-xl w-full mx-auto px-4 my-16 lg:px-8">
         <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">Articles récents</h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ul class="flex flex-col gap-4">
             <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
         </ul>
         <div class="text-center">
