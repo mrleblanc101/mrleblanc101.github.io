@@ -1,0 +1,1 @@
+import{Q as e,o,D as s,I as t}from"./entry.7502ca2c.js";const c={},a={class:"max-w-screen-xl w-full mx-auto px-4 my-16 lg:px-8"},n=t("h1",{class:"font-marvin font-black uppercase text-5xl mb-4 tracking-wide"},"\xC0 propos",-1),r=[n];function _(l,p){return o(),s("section",a,r)}const x=e(c,[["render",_]]);export{x as default};
