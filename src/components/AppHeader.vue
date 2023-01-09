@@ -12,7 +12,7 @@
                     <nav
                         v-show="menuOpened"
                         v-on-click-outside.bubble="onClickOutside"
-                        class="max-lg:p-4 sm:max-md:border-l sm:max-md:border-zinc-300 sm:max-md:dark:border-zinc-700 max-sm:w-full max-md:w-96 max-md:fixed max-md:top-0 max-md:right-0 max-md:bottom-0 max-md:bg-zinc-100 max-md:dark:bg-zinc-900 max-md:z-0 max-md:shadow-lg flex flex-col md:!flex md:!transform-none z-50"
+                        class="max-lg:p-4 sm:max-md:border-l sm:max-md:border-zinc-300 sm:max-md:dark:border-zinc-700 max-sm:w-full max-md:w-96 max-md:fixed max-md:top-0 max-md:right-0 max-md:bottom-0 max-md:h-[100dvh] max-md:bg-zinc-100 max-md:dark:bg-zinc-900 max-md:z-0 max-md:shadow-lg flex flex-col md:!flex md:!transform-none z-50"
                     >
                         <button
                             type="button"
