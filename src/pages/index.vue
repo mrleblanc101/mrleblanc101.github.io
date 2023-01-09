@@ -42,7 +42,7 @@
         <div class="text-center">
             <nuxt-link
                 to="/projets"
-                class="shadow bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none gap-2 mt-8 font-marvin font-black uppercase tracking-wider transition"
+                class="shadow bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none gap-2 mt-8 font-marvin uppercase tracking-wider transition"
             >
                 Voir tous les projets
             </nuxt-link>
@@ -56,7 +56,7 @@
         <div class="text-center">
             <nuxt-link
                 to="/blog"
-                class="shadow bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none gap-2 mt-8 font-marvin font-black uppercase tracking-wider transition"
+                class="shadow bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none gap-2 mt-8 font-marvin uppercase tracking-wider transition"
             >
                 Voir tous les articles
             </nuxt-link>
