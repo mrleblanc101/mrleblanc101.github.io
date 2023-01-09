@@ -4,7 +4,8 @@
         class="group relative rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800"
         @mouseenter="sharedState.elementRef = elementRef"
         @mouseleave="sharedState.elementRef = null"
-        @touchstart="onTap"
+        @touchend="onTap"
+        @touchmove.stop
     >
         <!-- <div class="absolute p-4 text-2xl top-0 left-0 bg-red-500 text-white">{{ project.order }}</div> -->
         <img

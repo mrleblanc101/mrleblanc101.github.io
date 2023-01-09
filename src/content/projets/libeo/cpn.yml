@@ -1,6 +1,8 @@
 title: Comités patronaux de négociation
 url: https://cpn.gouv.qc.ca/
 order: 4
-description:
+description: La nouvelle plateforme des Comités patronaux de négociation des secteurs de l'éducation et de l'enseignement supérieur (CPN) est un multi-site qui leur permet de regroupé toutes les informations des 5 comités (CPNCF, CPNC, CPNCA, CPNCSC, CPNCSK) en un seul endroit.
 tags:
 - Wordpress
+- Multisite
+- Auth
