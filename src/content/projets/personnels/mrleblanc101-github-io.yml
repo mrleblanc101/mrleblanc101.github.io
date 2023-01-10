@@ -1,7 +1,7 @@
 title: mrleblanc101.github.io
 url: https://mrleblanc101.github.io/
 order: 4
-description: En 2023, il étant temps de remettre a jour mon site personnel. J'ai donc explorer comment utilisé Nuxt 3 et Nuxt Content pour créer un blog généré statiquement qui pourrait être hoster sur Github Pages gratuitement.
+description: En 2023, il étant temps de remettre à jour mon site personnel. J'ai donc exploré l'utilisation de Nuxt 3 et Nuxt Content pour créer un blog généré statiquement qui serait hébergé gratuitement sur Github Pages.
 tags:
 - SSG
 - Nuxt.js 3
