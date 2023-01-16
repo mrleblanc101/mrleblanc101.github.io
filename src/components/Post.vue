@@ -12,12 +12,9 @@
                 <IPin class="h-6 w-6" />
                 <span class="opacity-60">Épinglé</span>
             </div>
-            <div v-else-if="index === 0" class="flex items-center text-lg gap-2 font-medium">
+            <div v-else="index === 0" class="flex items-center text-lg gap-2 font-medium">
                 <IPlant class="h-5 w-6" />
                 <span class="opacity-60">Dernier article</span>
-            </div>
-            <div v-if="index !== 0 && !post.pinned" class="font-medium opacity-60">
-                {{ formatDate(post.createdAt) }}
             </div>
             <h2 class="font-black text-xl md:text-3xl my-1 last:mb-0">{{ post.title }}</h2>
             <div v-if="index === 0 || post.pinned" class="font-medium opacity-60">{{ formatDate(post.createdAt) }}</div>
