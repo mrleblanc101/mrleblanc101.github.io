@@ -35,38 +35,37 @@
         </div>
     </section>
     <section class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
-        <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">Projets récents</h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Project v-for="projet in projects" :project="projet" />
-        </ul>
-        <div class="text-center">
-            <nuxt-link
-                to="/projets"
-                class="shadow bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none gap-2 mt-8 font-marvin uppercase tracking-wider transition"
-            >
-                Voir tous les projets
-            </nuxt-link>
-        </div>
-    </section>
-    <section class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
-        <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">Articles récents</h2>
+        <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
+            <NuxtLink to="/blog" class="flex items-baseline group">
+                Blog
+                <IArrowRight
+                    class="h-6 transition opacity-0 group-hover:opacity-100 text-zinc-500 group-hover:translate-x-2.5 duration-300"
+                />
+            </NuxtLink>
+        </h2>
         <ul class="flex flex-col gap-4">
             <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
         </ul>
-        <div class="text-center">
-            <nuxt-link
-                to="/blog"
-                class="shadow bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white rounded text-sm font-bold focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 inline-flex items-center justify-center h-9 px-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none gap-2 mt-8 font-marvin uppercase tracking-wider transition"
-            >
-                Voir tous les articles
-            </nuxt-link>
-        </div>
+    </section>
+    <section class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
+        <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
+            <NuxtLink to="/blog" class="flex items-baseline group">
+                Projets
+                <IArrowRight
+                    class="h-6 transition opacity-0 group-hover:opacity-100 text-zinc-500 group-hover:translate-x-2.5 duration-300"
+                />
+            </NuxtLink>
+        </h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Project v-for="projet in projects" :project="projet" />
+        </ul>
     </section>
 </template>
 
 <script lang="ts" setup>
 import IGithub from '@/assets/svg/github.svg?component';
 import ILinkedIn from '@/assets/svg/linkedin.svg?component';
+import IArrowRight from '@/assets/svg/chevron-right.svg?component';
 
 const { data: projects } = await useAsyncData('projets', () =>
     queryContent('/projets')

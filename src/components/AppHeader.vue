@@ -1,9 +1,25 @@
 <template>
-    <header class="bg-zinc-100 dark:bg-zinc-800 z-20">
+    <header
+        class="bg-zinc-100 dark:bg-zinc-800 z-20"
+        :class="{
+            'border-b border-zinc-200 dark:border-zinc-700': $route.name !== 'index' && $route.name !== 'blog-slug',
+        }"
+    >
         <div class="max-w-screen-xl flex gap-10 items-center w-full mx-auto p-4 lg:px-8">
-            <nuxt-link v-if="$route.path !== '/'" to="/" class="text-2xl lg:text-3xl font-marvin font-black uppercase">
-                Sébastien LeBlanc
-            </nuxt-link>
+            <Transition
+                enter-from-class="opacity-0 -translate-x-1.5"
+                leave-to-class="opacity-0 -translate-x-1.5"
+                enter-active-class="transition duration-300"
+                leave-active-class="transition duration-300"
+            >
+                <NuxtLink
+                    v-if="$route.name !== 'index'"
+                    to="/"
+                    class="text-2xl lg:text-3xl font-marvin font-black uppercase"
+                >
+                    mrleblanc101
+                </NuxtLink>
+            </Transition>
             <div class="ml-auto flex items-center gap-10">
                 <Transition
                     enter-from-class="translate-x-full"
@@ -25,25 +41,28 @@
                         </button>
                         <ul class="flex flex-col md:flex-row md:gap-12 font-medium">
                             <li>
-                                <nuxt-link
+                                <NuxtLink
                                     class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
                                     to="/blog"
-                                    >Blog</nuxt-link
                                 >
+                                    Blog
+                                </NuxtLink>
                             </li>
                             <li>
-                                <nuxt-link
+                                <NuxtLink
                                     class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
                                     to="/projets"
-                                    >Projets</nuxt-link
                                 >
+                                    Projets
+                                </NuxtLink>
                             </li>
                             <li>
-                                <nuxt-link
+                                <NuxtLink
                                     class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
                                     to="/a-propos"
-                                    >À propos</nuxt-link
                                 >
+                                    À propos
+                                </NuxtLink>
                             </li>
                         </ul>
                     </nav>
