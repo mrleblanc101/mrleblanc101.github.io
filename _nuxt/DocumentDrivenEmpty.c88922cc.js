@@ -1,0 +1,1 @@
+import{_ as n,f as o,j as e}from"./entry.16551f2e.js";const r=o({name:"DocumentDrivenEmpty",props:{value:{type:Object,required:!0}},render({value:t}){return e("div",void 0,[e("p","Document is empty"),e("p",`Add content to it by opening ${t._source}/${t._file} file.`)])}}),p=n(r,[["__file","DocumentDrivenEmpty.vue"]]);export{p as default};

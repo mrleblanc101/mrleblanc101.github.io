@@ -1,0 +1,1 @@
+import{_ as o,o as r,E as t,S as n}from"./entry.16551f2e.js";const s={};function c(e,a){return r(),t("strong",null,[n(e.$slots,"default")])}const _=o(s,[["render",c],["__file","ProseStrong.vue"]]);export{_ as default};

@@ -1,1 +1,0 @@
-import{_}from"./Project.vue_vue_type_style_index_0_scoped_95a89d0b_lang.28d23be8.js";import{_ as o}from"./entry.06d6027f.js";const e=o(_,[["__scopeId","data-v-95a89d0b"],["__file","Project.vue"]]);export{e as default};

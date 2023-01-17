@@ -1,1 +1,0 @@
-import{_ as o,o as t,E as r,S as c}from"./entry.06d6027f.js";const s={};function l(e,n){return t(),r("blockquote",null,[c(e.$slots,"default")])}const _=o(s,[["render",l],["__file","ProseBlockquote.vue"]]);export{_ as default};

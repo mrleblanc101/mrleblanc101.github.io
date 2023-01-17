@@ -1,1 +1,0 @@
-import{_ as o,o as r,E as s,S as t}from"./entry.06d6027f.js";const n={};function c(e,a){return r(),s("tbody",null,[t(e.$slots,"default")])}const _=o(n,[["render",c],["__file","ProseTbody.vue"]]);export{_ as default};

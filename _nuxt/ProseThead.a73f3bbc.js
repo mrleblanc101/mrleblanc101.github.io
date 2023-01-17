@@ -1,1 +1,0 @@
-import{_ as o,o as r,E as s,S as t}from"./entry.06d6027f.js";const a={};function n(e,c){return r(),s("thead",null,[t(e.$slots,"default")])}const _=o(a,[["render",n],["__file","ProseThead.vue"]]);export{_ as default};
