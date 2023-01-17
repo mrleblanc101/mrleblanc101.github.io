@@ -17,11 +17,13 @@ import IMoon from '@/assets/svg/moon.svg?component';
 import ISun from '@/assets/svg/sun.svg?component';
 import IComputer from '@/assets/svg/computer.svg?component';
 
+// const $disqus = inject(CONSTANTS.DISQUS_CONFIG_KEY)
 const colorMode = useColorMode();
 const onClick = () => {
     const values = ['system', 'light', 'dark'];
     const index = values.indexOf(colorMode.preference);
     const next = (index + 1) % values.length;
     colorMode.preference = values[next];
+    // $disqus.reset();
 };
 </script>

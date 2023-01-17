@@ -22,6 +22,7 @@
         "@vueuse/components": "^9.10.0",
         "@vueuse/core": "^9.10.0",
         "@vueuse/nuxt": "^9.10.0",
-        "vue-collapsed": "^1.1.1"
+        "vue-collapsed": "^1.1.1",
+        "vue-disqus": "^5.1.0"
     }
 }

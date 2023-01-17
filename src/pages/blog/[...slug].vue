@@ -35,6 +35,9 @@
                     <div class="font-black text-xl">{{ next.title }}</div>
                 </NuxtLink>
             </div>
+            <ClientOnly>
+                <Disqus class="mt-8" shortname="mrleblanc101" />
+            </ClientOnly>
         </div>
     </ContentDoc>
 </template>

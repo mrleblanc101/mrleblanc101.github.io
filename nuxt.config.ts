@@ -9,6 +9,12 @@ export default defineNuxtConfig({
         markdown: {
             remarkPlugins: ['remark-reading-time'],
         },
+        highlight: {
+            theme: {
+                default: 'github-light',
+                dark: 'github-dark',
+            },
+        },
     },
 
     colorMode: {
