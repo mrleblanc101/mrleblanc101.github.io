@@ -1,0 +1,1 @@
+import{_ as n,f as o,j as e}from"./entry.06d6027f.js";const t=o({name:"DocumentDrivenNotFound",render(){return e("div","Document not found")}}),u=n(t,[["__file","DocumentDrivenNotFound.vue"]]);export{u as default};
