@@ -39,7 +39,7 @@
                         v-if="project.url"
                         :href="project.url"
                         target="_blank"
-                        class="inline-flex gap-1 hover:gap-2 font-bold transition-all delay-300 before:content-[''] before:block [@media(any-hover:hover)]:before:absolute [@media(any-hover:hover)]:before:inset-0 text-gray-300"
+                        class="inline-flex gap-1 font-bold before:content-[''] before:block [@media(any-hover:hover)]:before:absolute [@media(any-hover:hover)]:before:inset-0 text-gray-300"
                     >
                         Voir le projet <IArrowRight class="w-5" />
                     </a>
