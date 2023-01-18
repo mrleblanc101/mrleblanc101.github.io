@@ -1,0 +1,1 @@
+import{_ as o,o as n,E as r,S as s}from"./entry.01363471.js";const t={};function c(e,l){return n(),r("code",null,[s(e.$slots,"default")])}const _=o(t,[["render",c],["__file","ProseCodeInline.vue"]]);export{_ as default};

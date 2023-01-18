@@ -1,1 +1,0 @@
-import{_ as o,o as r,E as s,S as l}from"./entry.16551f2e.js";const t={};function n(e,c){return r(),s("ul",null,[l(e.$slots,"default")])}const _=o(t,[["render",n],["__file","ProseUl.vue"]]);export{_ as default};
