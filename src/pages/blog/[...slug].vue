@@ -45,11 +45,8 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-let prev: any;
-let next: any;
-try {
-    [prev, next] = await queryContent('/blog').findSurround(route.fullPath);
-} catch (e) {}
+const { data: prevNext } = await useAsyncData('projets', () => queryContent('/blog').findSurround(route.fullPath));
+const [prev, next] = prevNext.value || [];
 
 function formatDate(date: Date) {
     return new Date(date).toLocaleDateString('fr', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' });
