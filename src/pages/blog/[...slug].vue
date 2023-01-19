@@ -44,7 +44,12 @@
 
 <script lang="ts" setup>
 const route = useRoute();
-const [prev, next] = await queryContent('/blog').findSurround(route.fullPath);
+
+let prev: any;
+let next: any;
+try {
+    [prev, next] = await queryContent('/blog').findSurround(route.fullPath);
+} catch (e) {}
 
 function formatDate(date: Date) {
     return new Date(date).toLocaleDateString('fr', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' });
