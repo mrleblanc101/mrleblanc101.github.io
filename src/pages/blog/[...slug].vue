@@ -36,7 +36,7 @@
                 </NuxtLink>
             </div>
             <ClientOnly>
-                <Disqus class="mt-8" shortname="mrleblanc101" />
+                <Disqus class="mt-8" />
             </ClientOnly>
         </div>
     </ContentDoc>
