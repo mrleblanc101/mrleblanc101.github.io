@@ -14,7 +14,12 @@ useHead({
     meta: [
         {
             name: 'viewport',
-            content: 'width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0',
+            content: 'width=device-width, initial-scale=1.0',
+        },
+        {
+            name: 'description',
+            content:
+                'Bonjour, je suis Sébastien LeBlanc. Un développeur Front-end qui conçois des produits numériques depuis 2017.',
         },
     ],
     link: [
@@ -29,6 +34,9 @@ useHead({
             href: '/apple-touch-icon.png',
         },
     ],
+    htmlAttrs: {
+        lang: 'fr',
+    },
     bodyAttrs: {
         class: 'antialiased overflow-x-clip text-gray-700 leading-normal bg-white dark:bg-zinc-900 dark:text-gray-300',
     },
