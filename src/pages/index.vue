@@ -15,6 +15,7 @@
                 <div class="absolute md:static inline-flex gap-5 my-6">
                     <a class="hover:opacity-70 transition" href="https://github.com/mrleblanc101" target="_blank">
                         <IGithub class="w-9" />
+                        <span class="sr-only">Profil Github</span>
                     </a>
                     <a
                         class="hover:opacity-70 transition"
@@ -22,6 +23,7 @@
                         target="_blank"
                     >
                         <ILinkedIn class="w-9" />
+                        <span class="sr-only">Profil LinkedIn</span>
                     </a>
                 </div>
             </div>
@@ -36,7 +38,7 @@
     </section>
     <section class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
         <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
-            <NuxtLink to="/blog" class="flex items-baseline group">
+            <NuxtLink to="/blog" class="inline-flex items-baseline group">
                 Blog
                 <IArrowRight
                     class="h-6 transition opacity-0 group-hover:opacity-100 text-zinc-500 group-hover:translate-x-2.5 duration-300"
@@ -49,7 +51,7 @@
     </section>
     <section class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
         <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
-            <NuxtLink to="/blog" class="flex items-baseline group">
+            <NuxtLink to="/blog" class="inline-flex items-baseline group">
                 Projets
                 <IArrowRight
                     class="h-6 transition opacity-0 group-hover:opacity-100 text-zinc-500 group-hover:translate-x-2.5 duration-300"

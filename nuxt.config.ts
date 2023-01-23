@@ -11,8 +11,8 @@ export default defineNuxtConfig({
         },
         highlight: {
             theme: {
-                default: 'github-light',
-                dark: 'github-dark',
+                default: 'solarized-light',
+                dark: 'solarized-dark',
             },
         },
     },
@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     postcss: {
         plugins: {
             'postcss-import': {},
+            'tailwindcss/nesting': {},
             tailwindcss: {},
             autoprefixer: {},
         },

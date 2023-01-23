@@ -15,7 +15,7 @@ Si vous avez suivi l'actualité, vous savez peut-être que Nuxt 3 utilise mainte
 
 Voici comment créer votre propre plugin pour utiliser moment.js directement dans une application multilingue utilisant [@nuxtjs/i18n](https://v8.i18n.nuxtjs.org/) et TypeScript dans Nuxt 3.
 
-```ts
+```js{2}[plugins/moment.ts]
 import moment from 'moment';
 import 'moment/locale/fr-ca';
 import type { NuxtApp } from '#app';
@@ -24,7 +24,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     const locale = nuxtApp.$i18n.locale.value;
     moment.locale(locale);
 
-    nuxtApp.$i18n.onBeforeLanguageSwitch = (oldLocale: string, newLocale: string, isInitialSetup: boolean, nuxtApp: NuxtApp) => {
+    nuxtApp.$i18n.onBeforeLanguageSwitch = (
+        oldLocale: string,
+        newLocale: string,
+        isInitialSetup: boolean,
+        nuxtApp: NuxtApp
+    ) => {
         moment.locale(newLocale);
     };
 
@@ -55,4 +60,4 @@ Vous pouvez migrer vers une alternatives plus modernes à moment.js, mais dans m
 
 J'ai bien tenté de migrer vers [Day.js](https://day.js.org/) a une API rétrocompatible et à l'avantage d'une approche modulaire et un code plus moderne lui permettant d'avoir un poid réduit (7kb vs 61kb) en prenant avantage des dernières fonctionnalités d'internationalisation d'EcmaScript, mais j'ai fait façe à une fonctionalité manquante en lien avec le parsing des heures (Ex. `10:00:00`) sans date d'associées.
 
-Heureusement, je pourrai peut-être faire la migration éventuellement puisqu'une [pull request](https://github.com/iamkun/dayjs/pull/2197) afin d'apporter cette fonctionnalité à Day.js a été ouverte après que j'aie ouvert '[issue](https://github.com/iamkun/dayjs/issues/2179) sur Github afin de reportée ce manquemant par rapport à moment.js.
+Heureusement, je pourrai peut-être faire la migration éventuellement puisqu'une [pull request](https://github.com/iamkun/dayjs/pull/2197) afin d'apporter cette fonctionnalité à Day.js a été ouverte après que j'aie ouvert l'[issue](https://github.com/iamkun/dayjs/issues/2179) sur Github afin de reportée ce manquemant par rapport à moment.js.
