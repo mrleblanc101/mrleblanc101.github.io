@@ -45,7 +45,9 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-const { data: prevNext } = await useAsyncData('surround', () => queryContent('/blog').findSurround(route.fullPath));
+const { data: prevNext } = await useAsyncData('surround', () =>
+    queryContent('/blog').only(['title', '_path']).findSurround(route.fullPath),
+);
 const [prev, next] = prevNext.value || [];
 
 function formatDate(date: Date) {
