@@ -1,1 +1,0 @@
-import{_ as o,o as r,e as s,h as t}from"./entry.d296e2ce.js";const n={};function c(e,l){return r(),s("li",null,[t(e.$slots,"default")])}const _=o(n,[["render",c],["__file","ProseLi.vue"]]);export{_ as default};
