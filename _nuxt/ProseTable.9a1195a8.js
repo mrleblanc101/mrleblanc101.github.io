@@ -1,1 +1,0 @@
-import{_ as o,o as r,e as s,h as t}from"./entry.efa11243.js";const a={};function l(e,n){return r(),s("table",null,[t(e.$slots,"default")])}const _=o(a,[["render",l],["__file","ProseTable.vue"]]);export{_ as default};
