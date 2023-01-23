@@ -1,1 +1,0 @@
-import{_ as t,f as n,S as o}from"./entry.145e4af5.js";const r=n({props:{code:{type:String,default:""},language:{type:String,default:null},filename:{type:String,default:null},highlights:{type:Array,default:()=>[]}}});function s(e,a,l,_,d,f){return o(e.$slots,"default")}const u=t(r,[["render",s],["__file","ProseCode.vue"]]);export{u as default};
