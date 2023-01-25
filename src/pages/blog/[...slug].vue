@@ -45,7 +45,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-const { data: prevNext } = await useAsyncData('surround', () =>
+const { data: prevNext } = await useAsyncData(`surround-${route.path}`, () =>
     queryContent('/blog').only(['title', '_path']).findSurround(route.fullPath),
 );
 const [prev, next] = prevNext.value || [];
