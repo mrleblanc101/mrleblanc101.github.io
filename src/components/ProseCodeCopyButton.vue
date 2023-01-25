@@ -1,6 +1,6 @@
 <template>
     <button :class="[(show || state === 'copied') && 'show']" @click="copy">
-        <span class="sr-only">Copy to clipboard</span>
+        <span class="sr-only select-none">Copy to clipboard</span>
         <span class="icon-wrapper">
             <Transition name="fade">
                 <IconClipboardCheck v-if="state === 'copied'" class="icon w-5 h-5" />

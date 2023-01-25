@@ -36,7 +36,7 @@
                 </NuxtLink>
             </div>
             <ClientOnly>
-                <Disqus class="mt-8" />
+                <Disqus class="mt-8" :key="colorMode.value" />
             </ClientOnly>
         </div>
     </ContentDoc>
@@ -44,6 +44,7 @@
 
 <script lang="ts" setup>
 const route = useRoute();
+const colorMode = useColorMode();
 
 const { data: prevNext } = await useAsyncData(`surround-${route.path}`, () =>
     queryContent('/blog').only(['title', '_path']).findSurround(route.fullPath),

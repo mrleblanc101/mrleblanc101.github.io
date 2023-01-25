@@ -37,6 +37,7 @@
                             class="flex-shrink-0 ml-auto mb-4 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex md:hidden transition"
                             @click.stop="menuOpened = false"
                         >
+                            <span class="sr-only">Fermer le menu</span>
                             <IClose class="w-6 h-6" />
                         </button>
                         <ul class="flex flex-col md:flex-row md:gap-12 font-medium">
@@ -75,7 +76,7 @@
                         class="flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex md:hidden transition"
                         @click.stop="menuOpened = true"
                     >
-                        <span class="sr-only">Menu</span>
+                        <span class="sr-only">Ouvrir le menu</span>
                         <IHamburger class="w-4 h-4" />
                     </button>
                 </div>
