@@ -8,13 +8,15 @@
         @touchmove.stop
     >
         <!-- <div class="absolute p-4 text-2xl top-0 left-0 bg-red-500 text-white">{{ project.order }}</div> -->
-        <img
-            class="w-full aspect-[16/10] object-cover"
+        <NuxtPicture
             :src="`${project._path}/thumbnail.jpg`"
             width="600"
             height="365"
+            quality="80"
             :alt="`Image: ${project.title}`"
             loading="lazy"
+            :imgAttrs="{ class: 'w-full max-w-none aspect-[16/10] object-cover' }"
+            sizes="sm:100vw lg:50vw lg:50vw xl:600px"
         />
         <div class="absolute top-0 bottom-0 left-0 w-full z-10 overflow-y-auto overscroll-none flex flex-col">
             <div

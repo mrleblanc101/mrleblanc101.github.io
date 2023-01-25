@@ -27,12 +27,14 @@
                     </a>
                 </div>
             </div>
-            <img
+            <NuxtPicture
                 class="max-h-full relative -z-10 ml-auto -mb-4 w-1/2 max-w-md md:max-w-none object-contain object-right-bottom pt-8 min-w-[250px]"
-                src="@/assets/img/profil-2.png"
-                alt=""
+                src="/img/profil.png"
+                alt="Photo de Sébastien LeBlanc"
                 width="1537"
                 height="2057"
+                quality="80"
+                sizes="sm:250px md:50vw lg:50vw xl:608px"
             />
         </div>
     </section>
