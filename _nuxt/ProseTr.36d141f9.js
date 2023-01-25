@@ -1,0 +1,1 @@
+import{_ as r,o,e as s,h as t}from"./entry.78c6806d.js";const n={};function c(e,a){return o(),s("tr",null,[t(e.$slots,"default")])}const _=r(n,[["render",c],["__file","ProseTr.vue"]]);export{_ as default};

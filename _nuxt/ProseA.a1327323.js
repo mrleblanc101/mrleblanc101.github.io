@@ -1,1 +1,0 @@
-import{b as n,o as s,c as a,w as r,h as _,S as f,_ as c}from"./entry.aa1124f1.js";const l=n({__name:"ProseA",props:{href:{type:String,default:""},blank:{type:Boolean,default:!1}},setup(e){return(t,p)=>{const o=f;return s(),a(o,{href:e.href},{default:r(()=>[_(t.$slots,"default")]),_:3},8,["href"])}}}),d=c(l,[["__file","ProseA.vue"]]);export{d as default};
