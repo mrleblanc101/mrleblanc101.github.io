@@ -1,1 +1,0 @@
-import{_ as e,o as t,e as o,k as s,t as n}from"./entry.42d0b062.js";const r={},a={class:"p-4 lg:px-8 text-center w-full max-w-screen-xl mx-auto"};function c(_,l){return t(),o("footer",a,[s("div",null,"\xA9 "+n(new Date().getFullYear())+" S\xE9bastien LeBlanc. Tous droits r\xE9serv\xE9s.",1)])}const p=e(r,[["render",c],["__file","AppFooter.vue"]]);export{p as default};
