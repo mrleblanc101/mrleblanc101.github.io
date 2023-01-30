@@ -18,7 +18,7 @@
         />
         <div class="absolute top-0 bottom-0 left-0 w-full z-10 overflow-y-auto overscroll-none flex flex-col">
             <div
-                class="relative mt-auto p-4 md:px-5 md:py-4 after:content-[''] after:absolute after:-top-[100%] after:bottom-0 after:left-0 after:right-0 after:bg-gradient-to-t after:from-black/80 after:to-transparent after:-z-10 after:pointer-events-none h-[60px]"
+                class="relative mt-auto p-4 md:px-5 md:py-4 after:content-[''] after:absolute after:-top-[100%] after:bottom-0 after:left-0 after:right-0 after:bg-gradient-to-t after:from-black/80 after:to-transparent after:-z-10 after:pointer-events-none h-[92px] flex items-end"
             >
                 <img class="max-h-[60px]" :src="`${project._path}/logo.svg`" :alt="`Logo: ${project.title}`" />
             </div>
