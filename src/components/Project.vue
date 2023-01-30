@@ -4,14 +4,13 @@
         class="group relative rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800"
         @mouseenter="sharedState.elementRef = elementRef"
         @mouseleave="sharedState.elementRef = null"
-        @touchend="onTap"
-        @touchmove.stop
+        @touchend.passive="onTap"
     >
         <!-- <div class="absolute p-4 text-2xl top-0 left-0 bg-red-500 text-white">{{ project.order }}</div> -->
         <NuxtPicture
             :src="`${project._path}/thumbnail.jpg`"
             :alt="`Image: ${project.title}`"
-            loading="lazy"
+            :loading="props.index && props.index > 5 ? 'lazy' : undefined"
             width="600"
             height="365"
             quality="80"
@@ -66,13 +65,26 @@ const is_expanded = computed(() => {
     return (elementRef.value && sharedState.value.elementRef === elementRef.value) || false;
 });
 
-defineProps({
+const props = defineProps({
     project: {
         type: Object,
         default: null,
         required: true,
     },
+    index: {
+        type: Number,
+        default: undefined,
+    },
 });
+
+// const icon = defineAsyncComponent(
+//     () =>
+//         import(
+//             `../public/projets/${props.project._dir}/${props.project._path
+//                 .split('/')
+//                 .at(-1)}/logo.svg?component&skipsvgo`
+//         ),
+// );
 
 function onTap(event: TouchEvent) {
     sharedState.value.elementRef = elementRef.value;
