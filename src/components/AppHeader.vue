@@ -2,7 +2,7 @@
     <header
         class="bg-zinc-100 dark:bg-zinc-800 z-20"
         :class="{
-            'border-b border-zinc-200 dark:border-zinc-700': $route.name !== 'index' && $route.name !== 'blog-slug',
+            'border-b border-zinc-200 dark:border-zinc-700': $route.name !== 'index',
         }"
     >
         <div class="max-w-screen-xl flex gap-10 items-center w-full mx-auto p-4 lg:px-8">
@@ -82,6 +82,7 @@
                 </div>
             </div>
         </div>
+        <div class="header-inner"></div>
     </header>
 </template>
 

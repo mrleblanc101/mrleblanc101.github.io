@@ -3,6 +3,11 @@ import ViteSvgLoader from 'vite-svg-loader';
 export default defineNuxtConfig({
     srcDir: 'src/',
 
+    app: {
+        pageTransition: { name: 'page', mode: 'out-in' },
+        layoutTransition: { name: 'layout', mode: 'out-in' },
+    },
+
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge'],
 
     content: {
