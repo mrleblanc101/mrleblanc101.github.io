@@ -1,1 +1,0 @@
-import{_ as r}from"./entry.0fa749bf.js";import{a1 as o,aj as t,am as s}from"./app.config.c943217e.js";const a={};function n(e,c){return o(),t("td",null,[s(e.$slots,"default")])}const f=r(a,[["render",n],["__file","ProseTd.vue"]]);export{f as default};

@@ -1,0 +1,1 @@
+import{_ as r}from"./entry.bba7035a.js";import{a1 as o,aj as s,am as t}from"./app.config.c943217e.js";const a={};function n(e,c){return o(),s("p",null,[t(e.$slots,"default")])}const f=r(a,[["render",n],["__file","ProseP.vue"]]);export{f as default};
