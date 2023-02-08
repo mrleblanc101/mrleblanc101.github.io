@@ -46,21 +46,21 @@ useHead({
 <style lang="postcss">
 .page-enter-active,
 .page-leave-active {
-    transition: all 0.4s;
+    transition: all 0.3s;
 }
 .page-enter-from,
 .page-leave-to {
     opacity: 0;
-    filter: blur(1rem);
+    filter: blur(6px);
 }
 
 .layout-enter-active,
 .layout-leave-active {
-    transition: all 0.4s;
+    transition: all 0.3s;
 }
 .layout-enter-from,
 .layout-leave-to {
     opacity: 0;
-    filter: blur(1rem);
+    filter: blur(6px);
 }
 </style>
