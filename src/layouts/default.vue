@@ -51,7 +51,7 @@ useHead({
 .page-enter-from,
 .page-leave-to {
     opacity: 0;
-    filter: blur(6px);
+    /* filter: blur(6px); */
 }
 
 .layout-enter-active,
@@ -61,6 +61,6 @@ useHead({
 .layout-enter-from,
 .layout-leave-to {
     opacity: 0;
-    filter: blur(6px);
+    /* filter: blur(6px); */
 }
 </style>
