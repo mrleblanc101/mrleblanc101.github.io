@@ -1,0 +1,1 @@
+/* empty css                            */import{_ as o}from"./entry.f8ad0e3b.js";import{a1 as r,aj as n,am as t}from"./app.config.c943217e.js";const a={};function c(e,s){return r(),n("code",null,[t(e.$slots,"default",{},void 0,!0)])}const f=o(a,[["render",c],["__scopeId","data-v-c4177f6c"],["__file","ProseCodeInline.vue"]]);export{f as default};
