@@ -1,1 +1,0 @@
-import{_ as e}from"./entry.bba7035a.js";import{a1 as r,aj as o}from"./app.config.c943217e.js";const c={};function t(s,_){return r(),o("hr")}const f=e(c,[["render",t],["__file","ProseHr.vue"]]);export{f as default};
