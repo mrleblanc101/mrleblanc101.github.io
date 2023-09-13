@@ -1,0 +1,1 @@
+import{c as o}from"./Project.vue.c2664707.js";import{_ as t}from"./entry.7eb5fcb1.js";import"./app.config.c943217e.js";import"./composables.fb893100.js";import"./client-only.0ab36f04.js";const c=t(o,[["__scopeId","data-v-a56fc54b"],["__file","Project.vue"]]);export{c as default};

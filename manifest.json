@@ -1,0 +1,17 @@
+{
+    "name": "mrleblanc101",
+    "short_name": "mrleblanc101",
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "icons": [
+        {
+            "src": "/maskable_icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "theme_color": "#18181b",
+    "background_color": "#18181b",
+    "display": "standalone"
+}
