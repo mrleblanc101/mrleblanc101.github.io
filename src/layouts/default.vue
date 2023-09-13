@@ -29,10 +29,9 @@ useHead({
             type: 'image/svg+xml',
         },
         {
-            rel: 'apple-touch-icon',
-            sizes: '180x180',
-            href: '/apple-touch-icon.png',
-        },
+            rel: 'manifest',
+            href: '/manifest.json',
+        }
     ],
     htmlAttrs: {
         lang: 'fr',
