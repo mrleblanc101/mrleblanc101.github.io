@@ -28,14 +28,9 @@
                         </a>
                     </div>
                 </div>
-                <NuxtPicture
-                    class="max-h-full relative -z-10 ml-auto -mb-4 w-1/2 max-w-md md:max-w-none object-contain object-right-bottom pt-8 min-w-[250px]"
-                    src="/img/profil.png"
+                <ProfileBlob
+                    class="relative -z-10 ml-auto w-1/2 max-w-md md:max-w-none pt-8 min-w-[250px]"
                     alt="Photo de Sébastien LeBlanc"
-                    width="1537"
-                    height="2057"
-                    quality="80"
-                    sizes="sm:250px md:50vw lg:50vw xl:608px"
                 />
             </div>
         </section>
