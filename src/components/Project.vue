@@ -1,69 +1,71 @@
 <template>
-    <li
-        ref="elementRef"
-        class="group relative rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800"
-        @mouseenter="sharedState.elementRef = elementRef"
-        @mouseleave="sharedState.elementRef = null"
-        @touchend.passive="onTap"
-    >
-        <!-- <div class="absolute p-4 text-2xl top-0 left-0 bg-red-500 text-white">{{ project.order }}</div> -->
-        <NuxtPicture
-            :src="`${project._path}/thumbnail.jpg`"
-            :alt="`Image: ${project.title}`"
-            :loading="props.index && props.index > 5 ? 'lazy' : undefined"
-            width="600"
-            height="365"
-            quality="80"
-            sizes="sm:100vw lg:50vw lg:50vw xl:600px"
-        />
-        <div class="absolute top-0 bottom-0 left-0 w-full z-10 overflow-y-auto overscroll-none flex flex-col">
-            <div
-                class="relative mt-auto p-4 md:px-5 md:py-4 after:content-[''] after:absolute after:-top-[100%] after:bottom-0 after:left-0 after:right-0 after:bg-gradient-to-t after:from-black/80 after:to-transparent after:-z-10 after:pointer-events-none h-[92px] flex items-end"
-            >
-                <img class="max-h-[60px]" :src="`${project._path}/logo.svg`" :alt="`Logo: ${project.title}`" />
-            </div>
-            <ClientOnly>
-                <Collapse :when="is_expanded" class="v-collapse">
-                    <div class="p-4 md:px-5 md:py-4 pt-0 md:pt-0 bg-black/80 flex flex-col gap-3">
-                        <div v-if="project.description" class="text-gray-300">
-                            {{ project.description }}
-                        </div>
-                        <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
-                            <li
-                                v-for="tag in project.tags"
-                                class="inline-block px-4 py-2 bg-gray-200 text-gray-700 font-medium text-xs uppercase rounded-full shadow-md whitespace-nowrap"
-                            >
-                                {{ tag }}
-                            </li>
-                        </ul>
-                        <a
-                            v-if="project.url"
-                            :href="project.url"
-                            target="_blank"
-                            class="inline-flex gap-1 font-bold before:content-[''] before:block [@media(any-hover:hover)]:before:absolute [@media(any-hover:hover)]:before:inset-0 text-gray-300"
+    <li>
+        <!--
+            Only named while this tile is transitioning: named elements are lifted above the page
+            (and its backdrop) during a view transition, so other tiles would cover the dialog.
+            Hidden while open: the dialog has taken over the names.
+        -->
+        <button
+            type="button"
+            class="block w-full text-left rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus-visible:ring-4 ring-zinc-400"
+            :class="{ invisible: isOpen }"
+            :style="isAnimating && !isOpen ? cardTransition : undefined"
+            aria-haspopup="dialog"
+            @click="open"
+        >
+            <ProjectMedia
+                :project="project"
+                :loading="index && index > 5 ? 'lazy' : undefined"
+                :named="isAnimating && !isOpen"
+            />
+        </button>
+        <dialog
+            ref="dialogRef"
+            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
+            :style="isOpen ? cardTransition : undefined"
+            :aria-label="project.title"
+            @cancel.prevent="close"
+            @close="isOpen = false"
+            @click="onDialogClick"
+        >
+            <div v-if="isOpen">
+                <ProjectMedia :project="project" named>
+                    <button
+                        type="button"
+                        class="absolute top-3 right-3 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
+                        @click="close"
+                    >
+                        <IClose class="w-5 h-5" />
+                        <span class="sr-only">Fermer</span>
+                    </button>
+                </ProjectMedia>
+                <div class="p-4 md:p-5 flex flex-col gap-4">
+                    <p v-if="project.description">{{ project.description }}</p>
+                    <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
+                        <li
+                            v-for="tag in project.tags"
+                            class="inline-block px-4 py-2 bg-zinc-200 dark:bg-zinc-700 font-medium text-xs uppercase rounded-full whitespace-nowrap"
                         >
-                            Voir le projet <IArrowRight class="w-5" />
-                        </a>
-                    </div>
-                </Collapse>
-            </ClientOnly>
-        </div>
+                            {{ tag }}
+                        </li>
+                    </ul>
+                    <a
+                        v-if="project.url"
+                        :href="project.url"
+                        target="_blank"
+                        class="inline-flex self-start gap-1 font-bold text-zinc-900 dark:text-white hover:opacity-70 transition"
+                    >
+                        Voir le projet <IArrowRight class="w-5" />
+                    </a>
+                </div>
+            </div>
+        </dialog>
     </li>
 </template>
 
-<script lang="ts">
-const sharedState = ref({
-    elementRef: null,
-});
-</script>
-
 <script lang="ts" setup>
 import IArrowRight from '@/assets/svg/arrow-right.svg?component';
-
-const elementRef = ref(null);
-const is_expanded = computed(() => {
-    return (elementRef.value && sharedState.value.elementRef === elementRef.value) || false;
-});
+import IClose from '@/assets/svg/close.svg?component';
 
 const props = defineProps({
     project: {
@@ -77,22 +79,106 @@ const props = defineProps({
     },
 });
 
-// const icon = defineAsyncComponent(
-//     () =>
-//         import(
-//             `../public/projets/${props.project._dir}/${props.project._path
-//                 .split('/')
-//                 .at(-1)}/logo.svg?component&skipsvgo`
-//         ),
-// );
+const dialogRef = ref<HTMLDialogElement | null>(null);
+const isOpen = ref(false);
 
-function onTap(event: TouchEvent) {
-    sharedState.value.elementRef = elementRef.value;
+// The tile and the dialog share these names, so the tile morphs into the dialog
+const cardTransition = {
+    viewTransitionName: `project-card-${props.project._path.replace(/[^a-z0-9]/gi, '-')}`,
+    viewTransitionClass: 'project-card',
+};
+
+const isAnimating = ref(false);
+
+async function withViewTransition(direction: 'open' | 'close', update: () => Promise<void>) {
+    const doc = document as Document & {
+        startViewTransition?: (cb: () => Promise<void>) => { finished: Promise<void> };
+    };
+    if (!doc.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        await update();
+        return;
+    }
+    // Apply the names (and the direction, used by the shadow animation) before the old state is captured
+    isAnimating.value = true;
+    document.documentElement.dataset.projectTransition = direction;
+    await nextTick();
+    doc.startViewTransition(update).finished.finally(() => {
+        isAnimating.value = false;
+        delete document.documentElement.dataset.projectTransition;
+    });
+}
+
+function open() {
+    withViewTransition('open', async () => {
+        isOpen.value = true;
+        await nextTick();
+        dialogRef.value?.showModal();
+        // Make sure the image and logo are painted before the new state is captured
+        const images = [...(dialogRef.value?.querySelectorAll('img') ?? [])];
+        await Promise.all(images.map((img) => img.decode().catch(() => {})));
+    });
+}
+
+function close() {
+    withViewTransition('close', async () => {
+        dialogRef.value?.close();
+        isOpen.value = false;
+        await nextTick();
+    });
+}
+
+// A click on the dialog element itself (not its content) is a click on the backdrop
+function onDialogClick(event: MouseEvent) {
+    if (event.target === dialogRef.value) close();
 }
 </script>
 
-<style lang="postcss" scoped>
-.v-collapse {
-    transition: height var(--vc-auto-duration) ease-out;
+<style lang="postcss">
+html:has(dialog[open]) {
+    overflow: hidden;
+}
+
+.project-dialog {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+::view-transition-group(.project),
+::view-transition-group(.project-card) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Tile and dialog have different heights: crop instead of stretching while the box grows */
+::view-transition-old(.project-card),
+::view-transition-new(.project-card) {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+::view-transition-image-pair(.project-card) {
+    overflow: clip;
+    border-radius: 0.25rem;
+}
+
+/*
+ * The snapshot would clip the dialog's shadow, so it is left out of the snapshot
+ * and animated on the image pair instead (which ends exactly where the real one starts).
+ */
+html[data-project-transition] .project-dialog {
+    box-shadow: none;
+}
+html[data-project-transition='open']::view-transition-image-pair(.project-card) {
+    animation: project-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+html[data-project-transition='close']::view-transition-image-pair(.project-card) {
+    animation: project-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) reverse both;
+}
+@keyframes project-shadow {
+    from {
+        box-shadow: 0 0 0 0 rgb(0 0 0 / 0);
+    }
+    to {
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
 }
 </style>
