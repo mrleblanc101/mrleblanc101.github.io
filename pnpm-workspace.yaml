@@ -1,0 +1,7 @@
+# Nuxt 3.1 and tailwind.config.js import packages that aren't direct dependencies (vue, tailwindcss, ...)
+shamefullyHoist: true
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  vue-demi: true

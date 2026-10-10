@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         layoutTransition: { name: 'layout', mode: 'out-in' },
     },
 
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image-edge'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image'],
 
     content: {
         markdown: {
