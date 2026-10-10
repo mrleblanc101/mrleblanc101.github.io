@@ -1,8 +1,10 @@
 <template>
     <div>
         <section class="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
-            <div class="flex flex-col relative justify-center max-w-(--breakpoint-xl) mx-auto p-4 lg:px-8 z-0">
-                <div class="md:-mt-24 md:absolute lg:mt-0">
+            <div
+                class="flex flex-col md:flex-row md:items-center md:gap-8 relative justify-center max-w-(--breakpoint-xl) mx-auto p-4 lg:px-8 z-0"
+            >
+                <div class="md:flex-1 md:min-w-0">
                     <p class="text-lg md:text-2xl font-black text-zinc-600 dark:text-zinc-400 mb-2 md:mb-4 tracking-tight">
                         Bonjour, je suis
                     </p>
@@ -12,13 +14,13 @@
                         Sébastien<br />
                         LeBlanc
                     </h1>
-                    <div class="max-w-[480px] md:text-xl leading-6 md:leading-7 mt-8 lg:mb-0">
+                    <div class="max-w-70 md:max-w-90 md:text-xl leading-6 md:leading-7 mt-4 md:mt-8 lg:mb-0">
                         Un développeur Front-End qui conçois des produits numériques depuis 2017.
                     </div>
                     <SocialLinks class="absolute md:static inline-flex gap-5 my-6" icon-class="w-9" />
                 </div>
                 <ProfileBlob
-                    class="relative -z-10 ml-auto w-1/2 max-w-md md:max-w-none md:py-4 min-w-[250px]"
+                    class="relative -z-10 ml-auto w-1/2 max-w-md md:max-w-none md:shrink-0 md:py-4 min-w-[250px]"
                     alt="Photo de Sébastien LeBlanc"
                 />
             </div>

@@ -1,6 +1,7 @@
 import tailwindcss from '@tailwindcss/vite';
 import readingTime from 'reading-time';
 import ViteSvgLoader from 'vite-svg-loader';
+import svgoConfig from './svgo.config.js';
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-10-09',
@@ -37,7 +38,7 @@ export default defineNuxtConfig({
     },
 
     colorMode: {
-        preference: 'system',
+        preference: 'dark',
         fallback: 'dark',
         classSuffix: '',
     },
@@ -45,24 +46,6 @@ export default defineNuxtConfig({
     css: ['~/assets/css/app.css'],
 
     vite: {
-        plugins: [
-            tailwindcss(),
-            ViteSvgLoader({
-                svgoConfig: {
-                    plugins: [
-                        { name: 'prefixIds' },
-                        { name: 'removeTitle' },
-                        { name: 'removeDesc' },
-                        { name: 'removeDimensions' },
-                        {
-                            name: 'removeAttrs',
-                            params: {
-                                attrs: '(fill|stroke)',
-                            },
-                        },
-                    ],
-                },
-            }),
-        ],
+        plugins: [tailwindcss(), ViteSvgLoader({ svgoConfig })],
     },
 });

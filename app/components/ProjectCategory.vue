@@ -1,7 +1,7 @@
 <template>
     <section :id="id">
         <div class="flex items-center justify-between gap-4 mb-4">
-            <h2 class="font-black text-2xl md:text-3xl ">{{ title }}</h2>
+            <h2 class="font-black text-2xl md:text-3xl leading-[1] ">{{ title }}</h2>
             <NuxtLink
                 v-if="link"
                 :to="link"
