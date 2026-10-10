@@ -1,5 +1,5 @@
 <template>
-    <svg viewBox="0 0 1000 1040" role="img" :aria-label="alt">
+    <svg ref="svg" viewBox="0 0 1000 1040" role="img" :aria-label="alt">
         <defs>
             <clipPath id="profile-blob-reveal">
                 <!-- Body: only visible inside the blob -->
@@ -63,6 +63,17 @@ const animation = {
 };
 
 const reducedMotion = usePreferredReducedMotion().value === 'reduce';
+
+// SMIL animations created client-side (e.g. coming back to the page) don't start on their own.
+// Restart them once the page is actually in the document (it can be mounted off-DOM by <Suspense> first).
+const svg = useTemplateRef<SVGSVGElement>('svg');
+onMounted(() =>
+    requestAnimationFrame(() =>
+        requestAnimationFrame(() =>
+            svg.value?.querySelectorAll('animate').forEach((animate) => animate.beginElement()),
+        ),
+    ),
+);
 
 const src = useImage()('/img/profil.png', { width: 1100, quality: 95, format: 'webp' });
 </script>
