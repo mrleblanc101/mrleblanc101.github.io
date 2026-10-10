@@ -82,7 +82,7 @@ const timeline = [
                 period: '2017',
                 title: 'Stagiaire en développement web',
                 place: 'Timothée Rolin Web Design',
-                description: "Stage internationnal de fin d'études de trois mois, juste avant mon arrivée chez Libéo.",
+                description: "Stage international de fin d'études de trois mois, juste avant mon arrivée chez Libéo.",
             },
         ],
     },

@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# mrleblanc101.github.io
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+My personal website and blog, built with [Nuxt](https://nuxt.com/docs/getting-started/introduction) and Nuxt Content, and statically generated for GitHub Pages.
 
 ## Setup
 

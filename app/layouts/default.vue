@@ -19,7 +19,7 @@ useHead({
         {
             name: 'description',
             content:
-                'Bonjour, je suis Sébastien LeBlanc. Un développeur Front-end qui conçois des produits numériques depuis 2017.',
+                'Bonjour, je suis Sébastien LeBlanc. Un développeur Front-end qui conçoit des produits numériques depuis 2017.',
         },
     ],
     link: [

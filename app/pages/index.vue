@@ -16,7 +16,7 @@
                         LeBlanc
                     </h1>
                     <div class="max-w-70 md:max-w-90 md:text-xl leading-6 md:leading-7 mt-4 md:mt-8 lg:mb-0">
-                        Un développeur Front-End qui conçois des produits numériques depuis 2017.
+                        Un développeur Front-End qui conçoit des produits numériques depuis 2017.
                     </div>
                     <SocialLinks class="absolute md:static inline-flex gap-5 my-6" icon-class="w-9" />
                 </div>
