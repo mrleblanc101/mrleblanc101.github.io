@@ -26,43 +26,52 @@
         </button>
         <dialog
             ref="dialogRef"
-            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-xl bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
+            class="p-0 m-auto w-[calc(100%-2rem)] max-w-4xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-xl bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
             :style="isOpen ? cardTransition : undefined"
             :aria-label="project.title"
             @cancel.prevent="close"
             @close="isOpen = false"
             @click="onDialogClick"
         >
-            <div v-if="isOpen">
-                <ProjectMedia class="rounded-t-xl" :project="project" sizes="sm:100vw md:672px" named>
-                    <button
-                        type="button"
-                        class="absolute top-3 right-3 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
-                        @click="close"
+            <!--
+                Prerendered (closed) so the optimized variants of its image are generated.
+                Lazy until opened, so it isn't downloaded with the page; eager once open, since lazy loading
+                can't start while the view transition has paused rendering
+            -->
+            <ProjectMedia
+                class="rounded-t-xl"
+                :project="project"
+                :loading="isOpen ? 'eager' : 'lazy'"
+                sizes="sm:100vw md:896px"
+                :named="isOpen"
+            >
+                <button
+                    type="button"
+                    class="absolute top-3 right-3 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
+                    @click="close"
+                >
+                    <IClose class="w-5 h-5" />
+                    <span class="sr-only">Fermer</span>
+                </button>
+            </ProjectMedia>
+            <div class="p-4 md:p-5 flex flex-col gap-4">
+                <p v-if="project.description">{{ project.description }}</p>
+                <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
+                    <li
+                        v-for="tag in project.tags"
+                        class="inline-block px-4 py-2 bg-zinc-200 dark:bg-zinc-800 font-medium text-xs uppercase rounded-full whitespace-nowrap"
                     >
-                        <IClose class="w-5 h-5" />
-                        <span class="sr-only">Fermer</span>
-                    </button>
-                </ProjectMedia>
-                <div class="p-4 md:p-5 flex flex-col gap-4">
-                    <p v-if="project.description">{{ project.description }}</p>
-                    <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
-                        <li
-                            v-for="tag in project.tags"
-                            class="inline-block px-4 py-2 bg-zinc-200 dark:bg-zinc-800 font-medium text-xs uppercase rounded-full whitespace-nowrap"
-                        >
-                            {{ tag }}
-                        </li>
-                    </ul>
-                    <a
-                        v-if="project.url"
-                        :href="project.url"
-                        target="_blank"
-                        class="inline-flex self-start gap-1 font-bold text-zinc-900 dark:text-white hover:opacity-70 transition"
-                    >
-                        Voir le projet <IArrowRight class="w-5" />
-                    </a>
-                </div>
+                        {{ tag }}
+                    </li>
+                </ul>
+                <a
+                    v-if="project.url"
+                    :href="project.url"
+                    target="_blank"
+                    class="inline-flex self-start gap-1 font-bold text-zinc-900 dark:text-white hover:opacity-70 transition"
+                >
+                    Voir le projet <IArrowRight class="w-5" />
+                </a>
             </div>
         </dialog>
     </li>

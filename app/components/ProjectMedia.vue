@@ -11,10 +11,10 @@
             :sizes="sizes"
         />
         <div
-            class="absolute inset-x-0 bottom-0 h-[min(184px,60%)] p-4 md:px-5 md:py-4 flex items-end bg-linear-to-t from-black/80 to-transparent pointer-events-none"
+            class="absolute inset-x-0 bottom-0 h-[min(184px,60%)] p-4 md:px-5 md:py-4 flex items-end bg-linear-to-t from-black/80 to-transparent"
         >
             <img
-                class="max-h-[60px] transition-transform duration-500 motion-safe:group-hover:-translate-y-1"
+                class="max-h-[60px] transition-transform duration-500"
                 :style="named ? transition('logo') : undefined"
                 :src="`/${project.stem}/logo.svg`"
                 :alt="`Logo: ${project.title}`"
@@ -29,7 +29,6 @@
 const props = defineProps<{
     project: Record<string, any>;
     loading?: 'lazy';
-    // Responsive image sizes: the tile (grid column) and the dialog (max-w-2xl) differ
     sizes: string;
     // Carries the shared view-transition names (only one element per name may be rendered at a time)
     named: boolean;
