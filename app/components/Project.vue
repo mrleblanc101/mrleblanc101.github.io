@@ -7,7 +7,7 @@
         -->
         <button
             type="button"
-            class="block w-full text-left rounded overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus:outline-none focus-visible:ring-4 ring-zinc-400"
+            class="block w-full text-left rounded-sm overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus:outline-hidden focus-visible:ring-4 ring-zinc-400"
             :class="{ invisible: isOpen }"
             :style="isAnimating && !isOpen ? cardTransition : undefined"
             aria-haspopup="dialog"
@@ -21,7 +21,7 @@
         </button>
         <dialog
             ref="dialogRef"
-            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
+            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-sm bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
             :style="isOpen ? cardTransition : undefined"
             :aria-label="project.title"
             @cancel.prevent="close"
@@ -133,7 +133,7 @@ function onDialogClick(event: MouseEvent) {
 }
 </script>
 
-<style lang="postcss">
+<style>
 html:has(dialog[open]) {
     overflow: hidden;
 }

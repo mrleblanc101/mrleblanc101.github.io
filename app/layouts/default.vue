@@ -42,7 +42,7 @@ useHead({
 });
 </script>
 
-<style lang="postcss">
+<style>
 .page-enter-active,
 .page-leave-active {
     transition: all 0.3s;

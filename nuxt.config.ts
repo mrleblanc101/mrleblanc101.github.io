@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import readingTime from 'reading-time';
 import ViteSvgLoader from 'vite-svg-loader';
 
@@ -9,7 +10,7 @@ export default defineNuxtConfig({
         layoutTransition: { name: 'layout', mode: 'out-in' },
     },
 
-    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image'],
+    modules: ['@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image'],
 
     content: {
         build: {
@@ -37,21 +38,11 @@ export default defineNuxtConfig({
         classSuffix: '',
     },
 
-    tailwindcss: {
-        cssPath: '~/assets/css/tailwind.css',
-    },
-
-    postcss: {
-        plugins: {
-            'postcss-import': {},
-            // tailwindcss@3 has no "exports" map, so the ESM import of `tailwindcss/nesting` fails
-            'tailwindcss/nesting': false,
-            'tailwindcss/nesting/index.js': {},
-        },
-    },
+    css: ['~/assets/css/app.css'],
 
     vite: {
         plugins: [
+            tailwindcss(),
             ViteSvgLoader({
                 svgoConfig: {
                     plugins: [

@@ -45,9 +45,11 @@ defineProps({
 const hovered = ref(false);
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
+@reference '@/assets/css/app.css';
+
 .prose-code {
-    @apply relative overflow-hidden rounded w-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700;
+    @apply relative overflow-hidden rounded-sm w-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700;
     &:hover {
         .filename {
             @apply opacity-0;
@@ -57,13 +59,13 @@ const hovered = ref(false);
         }
     }
     .filename {
-        @apply absolute top-0 right-0 py-2 px-3 font-mono transition duration-200 backdrop-blur-sm text-base rounded;
+        @apply absolute top-0 right-0 py-2 px-3 font-mono transition duration-200 backdrop-blur-xs text-base rounded-sm;
     }
     .copy-button {
         @apply absolute bottom-0 right-0;
     }
     :deep(.line) {
-        @apply inline-table min-h-[1rem];
+        @apply inline-table min-h-4;
     }
     :deep(pre) {
         @apply flex flex-1 overflow-x-auto m-0 bg-transparent;

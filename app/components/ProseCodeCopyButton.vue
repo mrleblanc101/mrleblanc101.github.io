@@ -42,9 +42,11 @@ const copy = (_e: MouseEvent) => {
 };
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
+@reference '@/assets/css/app.css';
+
 button {
-    @apply p-2 m-2 rounded transition duration-100 scale-75 opacity-0 backdrop-blur-sm;
+    @apply p-2 m-2 rounded-sm transition duration-100 scale-75 opacity-0 backdrop-blur-xs;
     &.show {
         @apply scale-100 opacity-100;
     }

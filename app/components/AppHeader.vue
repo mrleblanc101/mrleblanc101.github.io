@@ -5,7 +5,7 @@
             'border-b border-zinc-200 dark:border-zinc-700': $route.name !== 'index',
         }"
     >
-        <div class="max-w-screen-xl flex gap-10 items-center w-full mx-auto p-4 lg:px-8">
+        <div class="max-w-(--breakpoint-xl) flex gap-10 items-center w-full mx-auto p-4 lg:px-8">
             <Transition
                 enter-from-class="opacity-0 -translate-x-1.5"
                 leave-to-class="opacity-0 -translate-x-1.5"
@@ -30,11 +30,11 @@
                     <nav
                         v-show="menuOpened"
                         v-on-click-outside.bubble="onClickOutside"
-                        class="max-lg:p-4 sm:max-md:border-l sm:max-md:border-zinc-300 sm:max-md:dark:border-zinc-700 max-sm:w-full max-md:w-96 max-md:fixed max-md:top-0 max-md:right-0 max-md:bottom-0 max-md:h-[100dvh] max-md:bg-zinc-100 max-md:dark:bg-zinc-900 max-md:z-0 max-md:shadow-lg flex flex-col md:!flex md:!transform-none z-50"
+                        class="max-lg:p-4 sm:max-md:border-l sm:max-md:border-zinc-300 sm:max-md:dark:border-zinc-700 max-sm:w-full max-md:w-96 max-md:fixed max-md:top-0 max-md:right-0 max-md:bottom-0 max-md:h-dvh max-md:bg-zinc-100 max-md:dark:bg-zinc-900 max-md:z-0 max-md:shadow-lg flex flex-col md:flex! md:transform-none! z-50"
                     >
                         <button
                             type="button"
-                            class="flex-shrink-0 ml-auto mb-4 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex md:hidden transition"
+                            class="shrink-0 ml-auto mb-4 shadow-sm rounded-sm focus:outline-hidden ring-primary-200 dark:ring-gray-600 focus:ring-3 bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex md:hidden transition"
                             @click.stop="menuOpened = false"
                         >
                             <span class="sr-only">Fermer le menu</span>
@@ -73,7 +73,7 @@
                     <button
                         ref="menuBtn"
                         type="button"
-                        class="flex-shrink-0 shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex md:hidden transition"
+                        class="shrink-0 shadow-sm rounded-sm focus:outline-hidden ring-primary-200 dark:ring-gray-600 focus:ring-3 bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white items-center justify-center font-bold h-10 w-10 text-sm inline-flex md:hidden transition"
                         @click.stop="menuOpened = true"
                     >
                         <span class="sr-only">Ouvrir le menu</span>

@@ -11,7 +11,7 @@
             sizes="sm:100vw lg:50vw lg:50vw xl:600px"
         />
         <div
-            class="absolute inset-x-0 bottom-0 h-[184px] p-4 md:px-5 md:py-4 flex items-end bg-gradient-to-t from-black/80 to-transparent pointer-events-none"
+            class="absolute inset-x-0 bottom-0 h-[184px] p-4 md:px-5 md:py-4 flex items-end bg-linear-to-t from-black/80 to-transparent pointer-events-none"
         >
             <img
                 class="max-h-[60px]"
