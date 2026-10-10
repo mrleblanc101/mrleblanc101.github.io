@@ -1,11 +1,11 @@
 <template>
     <header
-        class="bg-zinc-100 dark:bg-zinc-800 z-20"
+        class="bg-zinc-100 flex items-center min-h-18 dark:bg-zinc-800 z-20"
         :class="{
             'border-b border-zinc-200 dark:border-zinc-700': $route.name !== 'index',
         }"
     >
-        <div class="max-w-(--breakpoint-xl) flex gap-10 items-center w-full mx-auto p-4 lg:px-8">
+        <div class="max-w-(--breakpoint-xl) flex gap-10 items-center w-full mx-auto px-4 lg:px-8">
             <Transition
                 enter-from-class="opacity-0 -translate-x-1.5"
                 leave-to-class="opacity-0 -translate-x-1.5"
@@ -15,9 +15,9 @@
                 <NuxtLink
                     v-if="$route.name !== 'index'"
                     to="/"
-                    class="text-2xl lg:text-3xl font-marvin uppercase"
+                    class="text-2xl lg:text-3xl font-marvin uppercase leading-[0.8]"
                 >
-                    mrleblanc101
+                    Sébastien <br/> LeBlanc
                 </NuxtLink>
             </Transition>
             <div class="ml-auto flex items-center gap-10">
