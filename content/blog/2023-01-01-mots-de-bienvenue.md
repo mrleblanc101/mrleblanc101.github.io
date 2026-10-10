@@ -1,14 +1,12 @@
 ---
-title: Bienvenue sur mon site web !
+title: Bienvenue sur mon nouveau site web !
 createdAt: 2023-01-01
 ---
 
-Nouvelle année, nouvelle résolution !
+Bonjour, et bienvenue sur mon nouveau site web. J'ai décidé qu'il était enfin temps de refaire mon site personnel de zéro.
 
-Après trop de procrastination, j'ai enfin décidé qu'il était temps de refaire mon site personnel de zéro.
+J'ai profité de l'occasion pour tester le nouveau `nuxt@^3.0.0` qui vient tout juste d'être lancé en version stable ainsi que `nuxt/content@^2.0.0` pour générer mon site de manière statique afin de l'héberger gratuitement sur Github Pages.
 
-En tant qu'à y être, de tester le nouveau `nuxt@^3.0.0` qui vient tout juste d'être lancé en version stable ainsi que `nuxt/content@^2.0.0` pour générer un blog de manière statique afin de hoster mon site gratuitement sur Github Pages.
+Sur ce blog, vous découvrirez mes expérimentations ainsi que des trucs et astuces sur l'écosystème Vue.js et Laravel.
 
-Sur ce blog, vous découvrirez mes expérimentations ainsi que des trucs et astuce sur l'écosystème Vue.js et Nuxt.js
-
-J'espère vous être utile ! N'hésitez pas à poser des questions dans les commentaires.
+J'espère que ces articles vous seront utiles ! N'hésitez pas à poser des questions dans les commentaires.

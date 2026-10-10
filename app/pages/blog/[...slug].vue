@@ -40,7 +40,11 @@
                     </NuxtLink>
                 </div>
                 <ClientOnly>
-                    <Disqus class="mt-8" :key="colorMode.value" />
+                    <!-- Disqus reads these to pick its theme and can't parse Tailwind's oklch() colors: same colors as the page, in hex -->
+                    <Disqus
+                        class="mt-8 text-[#364153] bg-white dark:text-[#d1d5dc] dark:bg-[#09090b]"
+                        :key="colorMode.value"
+                    />
                 </ClientOnly>
             </div>
         </article>
