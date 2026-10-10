@@ -2,13 +2,7 @@ import readingTime from 'reading-time';
 import ViteSvgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
-    srcDir: 'src/',
-    // Nuxt 4 resolves public/ from the root dir
-    dir: { public: 'src/public' },
-
     compatibilityDate: '2026-10-09',
-
-    ssr: false,
 
     app: {
         pageTransition: { name: 'page', mode: 'out-in' },
@@ -57,9 +51,6 @@ export default defineNuxtConfig({
     },
 
     vite: {
-        define: {
-            __VUE_PROD_DEVTOOLS__: true,
-        },
         plugins: [
             ViteSvgLoader({
                 svgoConfig: {
