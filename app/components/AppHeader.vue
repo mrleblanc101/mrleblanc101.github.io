@@ -37,7 +37,7 @@
                             <span class="sr-only">Fermer le menu</span>
                             <IClose class="w-6 h-6" />
                         </button>
-                        <ul class="flex flex-col md:flex-row md:gap-12 font-medium">
+                        <ul class="flex flex-col md:flex-row md:gap-10 font-medium">
                             <li v-if="appConfig.blog">
                                 <NuxtLink
                                     class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-800 transition-colors text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"

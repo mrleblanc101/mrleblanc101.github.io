@@ -28,7 +28,7 @@
                         :to="prev.path"
                     >
                         <div class="opacity-70 font-medium">Précédent</div>
-                        <div class="font-black text-xl">{{ prev.title }}</div>
+                        <div class="font-bold text-xl">{{ prev.title }}</div>
                     </NuxtLink>
                     <NuxtLink
                         class="md:ml-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-sm transition w-full md:max-w-sm"
@@ -36,7 +36,7 @@
                         :to="next.path"
                     >
                         <div class="opacity-70 font-medium">Suivant</div>
-                        <div class="font-black text-xl">{{ next.title }}</div>
+                        <div class="font-bold text-xl">{{ next.title }}</div>
                     </NuxtLink>
                 </div>
                 <ClientOnly>

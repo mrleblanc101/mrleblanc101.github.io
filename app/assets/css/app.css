@@ -18,6 +18,7 @@
     --color-primary-900: var(--color-zinc-900);
     --color-primary-950: var(--color-zinc-950);
 
+    --font-sans: Outfit, ui-sans-serif, system-ui, sans-serif;
     --font-marvin: MarvinVisions, var(--font-sans);
 }
 

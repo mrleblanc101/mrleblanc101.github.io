@@ -14,7 +14,10 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image', '@nuxt/fonts'],
 
     fonts: {
-        families: [{ name: 'MarvinVisions', provider: 'local', weights: [700], global: true }],
+        families: [
+            { name: 'MarvinVisions', provider: 'local', weights: [700], global: true },
+            { name: 'Outfit', provider: 'google', weights: [400, 500, 600, 700, 800, 900], global: true },
+        ],
     },
 
     content: {
