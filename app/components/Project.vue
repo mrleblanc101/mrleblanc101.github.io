@@ -7,13 +7,15 @@
         -->
         <button
             type="button"
-            class="block w-full text-left rounded-sm overflow-hidden bg-zinc-100 dark:bg-zinc-900 focus:outline-hidden focus-visible:ring-4 ring-zinc-400"
+            class="group block w-full text-left rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 focus:outline-hidden focus-visible:ring-4 ring-zinc-400"
             :class="{ invisible: isOpen }"
             :style="isAnimating && !isOpen ? cardTransition : undefined"
             aria-haspopup="dialog"
             @click="open"
         >
+            <!-- The media is captured on its own during the view transition: it needs its own rounded corners -->
             <ProjectMedia
+                class="rounded-xl"
                 :project="project"
                 :loading="index && index > 5 ? 'lazy' : undefined"
                 :named="isAnimating && !isOpen"
@@ -21,7 +23,7 @@
         </button>
         <dialog
             ref="dialogRef"
-            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-sm bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
+            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-xl bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
             :style="isOpen ? cardTransition : undefined"
             :aria-label="project.title"
             @cancel.prevent="close"
@@ -29,7 +31,7 @@
             @click="onDialogClick"
         >
             <div v-if="isOpen">
-                <ProjectMedia :project="project" named>
+                <ProjectMedia class="rounded-t-xl" :project="project" named>
                     <button
                         type="button"
                         class="absolute top-3 right-3 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
@@ -157,7 +159,8 @@ html:has(dialog[open]) {
 }
 ::view-transition-image-pair(.project-card) {
     overflow: clip;
-    border-radius: 0.25rem;
+    /* Same as the tile and dialog (rounded-xl) */
+    border-radius: var(--radius-xl);
 }
 
 /*
