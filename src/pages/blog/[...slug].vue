@@ -48,6 +48,8 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({ middleware: 'blog' });
+
 const route = useRoute();
 const colorMode = useColorMode();
 

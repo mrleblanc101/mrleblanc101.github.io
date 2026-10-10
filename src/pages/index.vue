@@ -34,7 +34,7 @@
                 />
             </div>
         </section>
-        <section class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
+        <section v-if="appConfig.blog" class="max-w-screen-xl w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
             <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
                 <NuxtLink to="/blog" class="inline-flex items-baseline group">
                     Blog
@@ -70,13 +70,15 @@ import IArrowRight from '@/assets/svg/chevron-right.svg?component';
 
 const { data: projects } = await useAsyncData('projets', () =>
     queryContent('/projets')
-        .limit(4)
+        .limit(6)
         .sort({
             order: -1,
             $numeric: true,
         })
         .find(),
 );
+
+const appConfig = useAppConfig();
 
 const { data: posts } = await useAsyncData('posts', () =>
     queryContent('/blog')

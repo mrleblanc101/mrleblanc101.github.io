@@ -41,7 +41,7 @@
                             <IClose class="w-6 h-6" />
                         </button>
                         <ul class="flex flex-col md:flex-row md:gap-12 font-medium">
-                            <li>
+                            <li v-if="appConfig.blog">
                                 <NuxtLink
                                     class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-700"
                                     to="/blog"
@@ -91,6 +91,7 @@ import IClose from '@/assets/svg/close.svg?component';
 import IHamburger from '@/assets/svg/hamburger.svg?component';
 
 const route = useRoute();
+const appConfig = useAppConfig();
 
 const menuOpened = ref(false);
 const menuBtn = ref(null);

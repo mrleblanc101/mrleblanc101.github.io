@@ -8,6 +8,8 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({ middleware: 'blog' });
+
 const { data: posts } = await useAsyncData('posts', () =>
     queryContent('/blog')
         .sort({
