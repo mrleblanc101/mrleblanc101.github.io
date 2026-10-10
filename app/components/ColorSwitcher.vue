@@ -1,7 +1,7 @@
 <template>
     <button
         type="button"
-        class="shrink-0 shadow-sm rounded-sm focus:outline-hidden ring-primary-200 dark:ring-gray-600 focus:ring-3 bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white inline-flex items-center justify-center font-bold h-10 w-10 text-sm transition"
+        class="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-sm shadow-sm transition bg-zinc-900 text-white hover:bg-zinc-700 active:bg-zinc-950 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white dark:active:bg-zinc-300 focus:outline-hidden focus-visible:ring-3 ring-zinc-400 dark:ring-zinc-500"
         @click="onClick"
     >
         <span class="sr-only">Change l'apparance</span>

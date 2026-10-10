@@ -4,8 +4,8 @@
             <li v-for="tab in tabs">
                 <NuxtLink
                     :to="tab.to"
-                    class="block px-4 py-2 font-medium text-xs uppercase rounded-full whitespace-nowrap transition bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600"
-                    exact-active-class="bg-zinc-900! text-white dark:bg-white! dark:text-zinc-900"
+                    class="block px-4 py-2 font-medium text-xs uppercase rounded-full whitespace-nowrap transition bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700"
+                    exact-active-class="bg-zinc-900! text-white dark:bg-white! dark:text-zinc-950"
                 >
                     {{ tab.title }}
                 </NuxtLink>

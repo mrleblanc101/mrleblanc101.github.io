@@ -10,7 +10,7 @@
                 <rect x="0" y="0" width="1000" :height="CHIN_Y" />
             </clipPath>
         </defs>
-        <path class="fill-white dark:fill-zinc-900 transition-colors" :d="frames[0]">
+        <path class="fill-white dark:fill-zinc-950 transition-colors" :d="frames[0]">
             <animate v-if="!reducedMotion" v-bind="animation" />
         </path>
         <image :href="src" x="50" y="0" width="900" height="1204" clip-path="url(#profile-blob-reveal)" />

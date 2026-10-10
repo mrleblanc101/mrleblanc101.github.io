@@ -1,7 +1,7 @@
 <template>
     <li>
         <NuxtLink
-            class="flex flex-col rounded-sm p-6 border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-100/60 dark:hover:bg-zinc-700/60 transition duration-300 h-full"
+            class="flex flex-col rounded-sm p-6 border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/60 transition duration-300 h-full"
             :to="post.path"
         >
             <div v-if="post.pinned" class="flex items-center text-lg gap-2 font-medium">

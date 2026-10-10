@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="bg-zinc-100 dark:bg-zinc-800 border-b border-zinc-200 dark:border-zinc-700">
+        <section class="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div class="flex flex-col relative justify-center max-w-(--breakpoint-xl) mx-auto p-4 lg:px-8 z-0">
                 <div class="md:-mt-24 md:absolute lg:mt-0">
                     <h1

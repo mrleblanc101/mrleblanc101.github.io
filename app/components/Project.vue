@@ -7,7 +7,7 @@
         -->
         <button
             type="button"
-            class="block w-full text-left rounded-sm overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus:outline-hidden focus-visible:ring-4 ring-zinc-400"
+            class="block w-full text-left rounded-sm overflow-hidden bg-zinc-100 dark:bg-zinc-900 focus:outline-hidden focus-visible:ring-4 ring-zinc-400"
             :class="{ invisible: isOpen }"
             :style="isAnimating && !isOpen ? cardTransition : undefined"
             aria-haspopup="dialog"
@@ -21,7 +21,7 @@
         </button>
         <dialog
             ref="dialogRef"
-            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-sm bg-white dark:bg-zinc-800 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
+            class="p-0 m-auto w-[calc(100%-2rem)] max-w-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-sm bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
             :style="isOpen ? cardTransition : undefined"
             :aria-label="project.title"
             @cancel.prevent="close"
@@ -44,7 +44,7 @@
                     <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
                         <li
                             v-for="tag in project.tags"
-                            class="inline-block px-4 py-2 bg-zinc-200 dark:bg-zinc-700 font-medium text-xs uppercase rounded-full whitespace-nowrap"
+                            class="inline-block px-4 py-2 bg-zinc-200 dark:bg-zinc-800 font-medium text-xs uppercase rounded-full whitespace-nowrap"
                         >
                             {{ tag }}
                         </li>
