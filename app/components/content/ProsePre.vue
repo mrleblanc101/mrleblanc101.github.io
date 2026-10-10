@@ -1,7 +1,7 @@
 <template>
     <div
         :class="[`highlight-${language}`]"
-        class="prose-code"
+        class="prose-pre"
         @mouseenter="hovered = true"
         @mouseleave="hovered = false"
     >
@@ -11,7 +11,7 @@
 
         <pre :class="$props.class"><slot /></pre>
 
-        <ProseCodeCopyButton :show="hovered" :content="code" class="copy-button" />
+        <ProseCodeCopyButton :show="hovered" :content="code" />
     </div>
 </template>
 
@@ -44,40 +44,3 @@ defineProps({
 });
 const hovered = ref(false);
 </script>
-
-<style scoped>
-@reference '@/assets/css/app.css';
-
-.prose-code {
-    @apply relative overflow-hidden rounded-sm w-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700;
-    &:hover {
-        .filename {
-            @apply opacity-0;
-            &:hover {
-                @apply opacity-100;
-            }
-        }
-    }
-    .filename {
-        @apply absolute top-0 right-0 py-2 px-3 font-mono transition duration-200 backdrop-blur-xs text-base rounded-sm;
-    }
-    .copy-button {
-        @apply absolute bottom-0 right-0;
-    }
-    :deep(.line) {
-        @apply inline-table min-h-4;
-    }
-    :deep(pre) {
-        @apply flex flex-1 overflow-x-auto m-0 bg-transparent;
-    }
-    :deep(pre code) {
-        @apply flex flex-col w-full;
-    }
-    :deep(.line.highlight) {
-        @apply bg-zinc-200 -mx-6 px-6;
-    }
-    :deep(.line.highlight) {
-        @apply dark:bg-zinc-700;
-    }
-}
-</style>

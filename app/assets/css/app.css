@@ -41,3 +41,61 @@ svg {
     fill: currentColor;
     pointer-events: none;
 }
+
+/* components/content/ProseCode.vue */
+.prose-code {
+    @apply before:hidden after:hidden rounded-sm py-1 px-1.5 whitespace-pre-wrap wrap-break-word text-inherit bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-[80%];
+}
+
+/* components/content/ProsePre.vue */
+.prose-pre {
+    @apply relative overflow-hidden rounded-sm w-full bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700;
+    &:hover {
+        .filename {
+            @apply opacity-0;
+            &:hover {
+                @apply opacity-100;
+            }
+        }
+    }
+    .filename {
+        @apply absolute top-0 right-0 py-2 px-3 font-mono transition duration-200 backdrop-blur-xs text-base rounded-sm;
+    }
+    .copy-button {
+        @apply absolute bottom-0 right-0;
+    }
+    .line {
+        @apply inline-table min-h-4;
+    }
+    pre {
+        @apply flex flex-1 overflow-x-auto m-0 bg-transparent;
+    }
+    pre code {
+        @apply flex flex-col w-full;
+    }
+    .line.highlight {
+        @apply bg-zinc-200 dark:bg-zinc-700 -mx-6 px-6;
+    }
+}
+
+/* components/ProseCodeCopyButton.vue */
+.copy-button {
+    @apply p-2 m-2 rounded-sm transition duration-100 scale-75 opacity-0 backdrop-blur-xs;
+    &.show {
+        @apply scale-100 opacity-100;
+    }
+    .icon-wrapper {
+        @apply block relative w-5 h-5;
+    }
+    .icon {
+        @apply block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        @apply transition duration-200;
+    }
+    .fade-enter-from,
+    .fade-leave-to {
+        @apply opacity-0;
+    }
+}

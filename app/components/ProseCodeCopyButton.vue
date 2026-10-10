@@ -1,5 +1,5 @@
 <template>
-    <button :class="[(show || state === 'copied') && 'show']" @click="copy">
+    <button class="copy-button" :class="[(show || state === 'copied') && 'show']" @click="copy">
         <span class="sr-only select-none">Copy to clipboard</span>
         <span class="icon-wrapper">
             <Transition name="fade">
@@ -41,28 +41,3 @@ const copy = (_e: MouseEvent) => {
         });
 };
 </script>
-
-<style scoped>
-@reference '@/assets/css/app.css';
-
-button {
-    @apply p-2 m-2 rounded-sm transition duration-100 scale-75 opacity-0 backdrop-blur-xs;
-    &.show {
-        @apply scale-100 opacity-100;
-    }
-}
-.icon-wrapper {
-    @apply block relative w-5 h-5;
-    .icon {
-        @apply block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-    }
-    .fade-enter-active,
-    .fade-leave-active {
-        @apply transition duration-200;
-    }
-    .fade-enter-from,
-    .fade-leave-to {
-        @apply opacity-0;
-    }
-}
-</style>
