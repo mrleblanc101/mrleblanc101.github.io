@@ -4,7 +4,7 @@
             <div class="flex flex-col relative justify-center max-w-(--breakpoint-xl) mx-auto p-4 lg:px-8 z-0">
                 <div class="md:-mt-24 md:absolute lg:mt-0">
                     <h1
-                        class="font-marvin font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase leading-none tracking-wide"
+                        class="font-marvin text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase leading-none tracking-wide"
                     >
                         Sébastien<br />
                         LeBlanc
@@ -35,7 +35,7 @@
             </div>
         </section>
         <section v-if="appConfig.blog" class="max-w-(--breakpoint-xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
-            <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
+            <h2 class="font-marvin uppercase text-3xl md:text-5xl mb-4 tracking-wide">
                 <NuxtLink to="/blog" class="inline-flex items-baseline group">
                     Blog
                     <IArrowRight
@@ -48,7 +48,7 @@
             </ul>
         </section>
         <section class="max-w-(--breakpoint-xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
-            <h2 class="font-marvin font-black uppercase text-3xl md:text-5xl mb-4 tracking-wide">
+            <h2 class="font-marvin uppercase text-3xl md:text-5xl mb-4 tracking-wide">
                 <NuxtLink to="/projets" class="inline-flex items-baseline group">
                     Projets
                     <IArrowRight

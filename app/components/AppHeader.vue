@@ -15,7 +15,7 @@
                 <NuxtLink
                     v-if="$route.name !== 'index'"
                     to="/"
-                    class="text-2xl lg:text-3xl font-marvin font-black uppercase"
+                    class="text-2xl lg:text-3xl font-marvin uppercase"
                 >
                     mrleblanc101
                 </NuxtLink>
