@@ -2,7 +2,7 @@
     <div>
         <section class="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div
-                class="flex flex-col md:flex-row md:items-center md:gap-8 relative justify-center max-w-(--breakpoint-xl) mx-auto p-4 lg:px-8 z-0"
+                class="flex flex-col md:flex-row md:items-center md:gap-8 relative justify-center max-w-(--breakpoint-2xl) mx-auto p-4 lg:px-8 z-0"
             >
                 <div class="md:flex-1 md:min-w-0">
                     <p class="text-lg md:text-2xl font-black text-zinc-600 dark:text-zinc-400 mb-2 md:mb-4">
@@ -11,6 +11,7 @@
                     <h1
                         class="font-marvin text-black dark:text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase leading-[0.9] tracking-wide"
                     >
+                        <span class="sr-only">Bonjour, je suis</span>
                         Sébastien<br />
                         LeBlanc
                     </h1>
@@ -25,7 +26,7 @@
                 />
             </div>
         </section>
-        <section v-if="appConfig.blog" class="max-w-(--breakpoint-xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
+        <section v-if="appConfig.blog" class="max-w-(--breakpoint-2xl) w-full mx-auto px-4 my-10 lg:my-16 lg:px-8">
             <h2 class="font-marvin text-black dark:text-white uppercase text-3xl md:text-5xl mb-4 tracking-wide">
                 <NuxtLink to="/blog" class="inline-flex items-baseline group">
                     Blog
@@ -38,14 +39,16 @@
                 <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
             </ul>
         </section>
-        <section class="max-w-(--breakpoint-xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
+        <section class="max-w-(--breakpoint-2xl) w-full mx-auto px-4 my-10 lg:my-16 lg:px-8">
             <h2 class="font-marvin text-black dark:text-white uppercase text-3xl md:text-5xl mb-2 md:mb-4 tracking-wide">Projets</h2>
-            <div class="flex flex-col gap-16">
+            <div class="flex flex-col gap-10 md:gap-16">
                 <ProjectCategory
                     v-for="section in sections"
                     :title="section.title"
                     :projects="section.projects"
                     :count="section.count"
+                    heading="h3"
+                    :limit="2"
                     :link="`/projets/${section.slug}`"
                 />
                 <NuxtLink
@@ -70,7 +73,7 @@ const { data: projects } = await useProjects();
 const sections = computed(() =>
     projectCategories.map((category) => {
         const all = (projects.value ?? []).filter((p) => projectCategory(p) === category.slug);
-        return { ...category, projects: all.slice(0, 2), count: all.length };
+        return { ...category, projects: all.slice(0, 3), count: all.length };
     }),
 );
 

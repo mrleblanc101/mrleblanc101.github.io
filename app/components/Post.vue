@@ -12,7 +12,13 @@
                 <IPlant class="h-5 w-6" />
                 <span class="opacity-75">Dernier article</span>
             </div>
-            <h2 class="font-bold text-black dark:text-white text-xl md:text-3xl my-1 last:mb-0">{{ post.title }}</h2>
+            <!-- h3 on the home page, under its "Blog" h2 -->
+            <component
+                :is="is_home ? 'h3' : 'h2'"
+                class="font-bold text-black dark:text-white text-xl md:text-3xl my-1 last:mb-0"
+            >
+                {{ post.title }}
+            </component>
             <div class="font-medium opacity-75">{{ formatDate(post.createdAt) }}</div>
         </NuxtLink>
     </li>

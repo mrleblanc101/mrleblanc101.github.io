@@ -1,7 +1,10 @@
 <template>
     <section :id="id">
         <div class="flex items-baseline justify-between gap-4 mb-3">
-            <h2 class="font-semibold text-2xl md:text-3xl leading-tight text-zinc-900 dark:text-white">
+            <component
+                :is="heading ?? 'h2'"
+                class="font-semibold text-2xl md:text-3xl leading-tight text-zinc-900 dark:text-white"
+            >
                 {{ title }}
                 <!-- Own line on mobile, after the title from sm up -->
                 <span
@@ -9,7 +12,7 @@
                 >
                     <span class="hidden sm:inline">·</span> {{ total }} projet{{ total > 1 ? 's' : '' }}
                 </span>
-            </h2>
+            </component>
             <NuxtLink
                 v-if="link"
                 :to="link"
@@ -19,7 +22,7 @@
                 <IArrowRight class="w-4 transition-transform motion-safe:group-hover:translate-x-1" />
             </NuxtLink>
         </div>
-        <ProjectGrid :projects="projects" />
+        <ProjectGrid :projects="projects" :limit="limit" />
     </section>
 </template>
 
@@ -34,6 +37,10 @@ const props = defineProps<{
     link?: string;
     // Number of projects in the category, when only some of them are shown
     count?: number;
+    // h3 when the section is nested under another heading (home page)
+    heading?: 'h2' | 'h3';
+    // Number of projects shown below lg (see ProjectGrid)
+    limit?: number;
 }>();
 
 const total = computed(() => props.count ?? props.projects.length);

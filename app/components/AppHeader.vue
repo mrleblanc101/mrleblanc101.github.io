@@ -3,7 +3,7 @@
         class="bg-zinc-100 dark:bg-zinc-900 z-20 border-b transition-colors duration-300"
         :class="$route.name !== 'index' ? 'border-zinc-200 dark:border-zinc-800' : 'border-transparent'"
     >
-        <div class="max-w-(--breakpoint-xl) flex gap-10 items-center w-full mx-auto px-4 lg:px-8">
+        <div class="max-w-(--breakpoint-2xl) flex gap-10 items-center w-full mx-auto px-4 lg:px-8">
             <Transition
                 enter-from-class="opacity-0 -translate-x-1.5"
                 leave-to-class="opacity-0 -translate-x-1.5"

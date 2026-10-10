@@ -18,6 +18,7 @@
                 class="rounded-xl"
                 :project="project"
                 :loading="index && index > 5 ? 'lazy' : undefined"
+                sizes="sm:100vw md:50vw lg:33vw 2xl:480px"
                 :named="isAnimating && !isOpen"
             />
         </button>
@@ -31,7 +32,7 @@
             @click="onDialogClick"
         >
             <div v-if="isOpen">
-                <ProjectMedia class="rounded-t-xl" :project="project" named>
+                <ProjectMedia class="rounded-t-xl" :project="project" sizes="sm:100vw md:672px" named>
                     <button
                         type="button"
                         class="absolute top-3 right-3 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"

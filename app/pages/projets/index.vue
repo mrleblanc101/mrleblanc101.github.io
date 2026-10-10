@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-10 md:gap-16">
         <ProjectCategory
             v-for="section in sections"
             :id="section.slug"
