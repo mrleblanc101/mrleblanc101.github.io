@@ -64,5 +64,5 @@ const animation = {
 
 const reducedMotion = usePreferredReducedMotion().value === 'reduce';
 
-const src = useImage()('/img/profil.png', { width: 1100, quality: 80, format: 'webp' });
+const src = useImage()('/img/profil.png', { width: 1100, quality: 95, format: 'webp' });
 </script>
