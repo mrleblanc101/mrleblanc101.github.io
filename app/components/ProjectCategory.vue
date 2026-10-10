@@ -22,7 +22,7 @@
                 <IArrowRight class="w-4 transition-transform motion-safe:group-hover:translate-x-1" />
             </NuxtLink>
         </div>
-        <ProjectGrid :projects="projects" :limit="limit" />
+        <ProjectGrid :projects="projects" :limit="limit" :heading="heading === 'h3' ? 'h4' : 'h3'" />
     </section>
 </template>
 

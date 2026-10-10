@@ -1,5 +1,7 @@
 <template>
     <li>
+        <!-- Outside the button: headings aren't allowed inside one -->
+        <component :is="heading" class="sr-only">{{ project.title }}</component>
         <!--
             Only named while this tile is transitioning: named elements are lifted above the page
             (and its backdrop) during a view transition, so other tiles would cover the dialog.
@@ -79,6 +81,11 @@ const props = defineProps({
     index: {
         type: Number,
         default: undefined,
+    },
+    // Level of the (visually hidden) title, one below the heading above the grid
+    heading: {
+        type: String as PropType<'h2' | 'h3' | 'h4'>,
+        required: true,
     },
 });
 
