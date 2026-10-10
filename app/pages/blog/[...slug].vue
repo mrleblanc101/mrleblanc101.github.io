@@ -54,7 +54,7 @@ const route = useRoute();
 const colorMode = useColorMode();
 
 const { data: doc } = await useAsyncData(`blog-${route.path}`, () => queryCollection('blog').path(route.path).first());
-if (!doc.value) throw createError({ statusCode: 404, statusMessage: 'Article introuvable', fatal: true });
+if (!doc.value) throw createError({ statusCode: 404, message: 'Article introuvable', fatal: true });
 
 const { data: prevNext } = await useAsyncData(`surround-${route.path}`, () =>
     queryCollectionItemSurroundings('blog', route.path, { fields: ['title'] }),

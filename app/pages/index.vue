@@ -47,19 +47,14 @@
                 <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
             </ul>
         </section>
-        <section class="max-w-(--breakpoint-xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8">
-            <h2 class="font-marvin uppercase text-3xl md:text-5xl mb-4 tracking-wide">
-                <NuxtLink to="/projets" class="inline-flex items-baseline group">
-                    Projets
-                    <IArrowRight
-                        class="h-6 transition opacity-0 group-hover:opacity-100 text-zinc-500 group-hover:translate-x-2.5 duration-300"
-                    />
-                </NuxtLink>
-            </h2>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Project v-for="projet in projects" :project="projet" />
-            </ul>
-        </section>
+        <div class="max-w-(--breakpoint-xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8 flex flex-col gap-16">
+            <ProjectCategory
+                v-for="section in sections"
+                :title="section.title"
+                :projects="section.projects"
+                :link="`/projets/${section.slug}`"
+            />
+        </div>
     </div>
 </template>
 
@@ -68,11 +63,15 @@ import IGithub from '@/assets/svg/github.svg?component';
 import ILinkedIn from '@/assets/svg/linkedin.svg?component';
 import IArrowRight from '@/assets/svg/chevron-right.svg?component';
 
-const { data: projects } = await useAsyncData('projets', () =>
-    queryCollection('projets').order('order', 'DESC').limit(6).all(),
-);
-
 const appConfig = useAppConfig();
+
+const { data: projects } = await useProjects();
+const sections = computed(() =>
+    projectCategories.map((category) => ({
+        ...category,
+        projects: (projects.value ?? []).filter((p) => projectCategory(p) === category.slug).slice(0, 4),
+    })),
+);
 
 const { data: posts } = await useAsyncData('posts', () =>
     queryCollection('blog').order('createdAt', 'DESC').order('pinned', 'ASC').limit(3).all(),
