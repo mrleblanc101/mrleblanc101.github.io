@@ -14,19 +14,9 @@
 
 <script lang="ts" setup>
 const { data: libeo_projects } = await useAsyncData('libeo_projects', () =>
-    queryContent('/projets/libeo')
-        .sort({
-            order: -1,
-            $numeric: true,
-        })
-        .find(),
+    queryCollection('projets').where('stem', 'LIKE', 'projets/libeo/%').order('order', 'DESC').all(),
 );
 const { data: personnal_projects } = await useAsyncData('personnal_projects', () =>
-    queryContent('/projets/perso')
-        .sort({
-            order: -1,
-            $numeric: true,
-        })
-        .find(),
+    queryCollection('projets').where('stem', 'LIKE', 'projets/personnels/%').order('order', 'DESC').all(),
 );
 </script>

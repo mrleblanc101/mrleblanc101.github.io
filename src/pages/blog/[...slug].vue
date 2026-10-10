@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ContentDoc tag="article" v-slot="{ doc }">
+        <article v-if="doc">
             <!-- <div class="bg-zinc-100 dark:bg-zinc-800 border-b border-zinc-200 dark:border-zinc-700"> -->
             <Teleport to=".header-inner">
                 <div class="max-w-screen-xl mx-auto p-4 lg:px-8 lg:py-16 z-0">
@@ -25,7 +25,7 @@
                     <NuxtLink
                         class="md:mr-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded transition w-full md:max-w-sm"
                         v-if="prev"
-                        :to="prev._path"
+                        :to="prev.path"
                     >
                         <div class="opacity-70 font-medium">Précédent</div>
                         <div class="font-black text-xl">{{ prev.title }}</div>
@@ -33,7 +33,7 @@
                     <NuxtLink
                         class="md:ml-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded transition w-full md:max-w-sm"
                         v-if="next"
-                        :to="next._path"
+                        :to="next.path"
                     >
                         <div class="opacity-70 font-medium">Suivant</div>
                         <div class="font-black text-xl">{{ next.title }}</div>
@@ -43,7 +43,7 @@
                     <Disqus class="mt-8" :key="colorMode.value" />
                 </ClientOnly>
             </div>
-        </ContentDoc>
+        </article>
     </div>
 </template>
 
@@ -53,8 +53,11 @@ definePageMeta({ middleware: 'blog' });
 const route = useRoute();
 const colorMode = useColorMode();
 
+const { data: doc } = await useAsyncData(`blog-${route.path}`, () => queryCollection('blog').path(route.path).first());
+if (!doc.value) throw createError({ statusCode: 404, statusMessage: 'Article introuvable', fatal: true });
+
 const { data: prevNext } = await useAsyncData(`surround-${route.path}`, () =>
-    queryContent('/blog').only(['title', '_path']).findSurround(route.fullPath),
+    queryCollectionItemSurroundings('blog', route.path, { fields: ['title'] }),
 );
 const [prev, next] = prevNext.value || [];
 

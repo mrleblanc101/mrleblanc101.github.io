@@ -84,7 +84,7 @@ const isOpen = ref(false);
 
 // The tile and the dialog share these names, so the tile morphs into the dialog
 const cardTransition = {
-    viewTransitionName: `project-card-${props.project._path.replace(/[^a-z0-9]/gi, '-')}`,
+    viewTransitionName: `project-card-${props.project.stem.replace(/[^a-z0-9]/gi, '-')}`,
     viewTransitionClass: 'project-card',
 };
 

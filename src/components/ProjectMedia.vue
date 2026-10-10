@@ -2,7 +2,7 @@
     <div class="relative" :style="named ? transition('image') : undefined">
         <NuxtPicture
             class="[&_img]:w-full"
-            :src="`${project._path}/thumbnail.jpg`"
+            :src="`/${project.stem}/thumbnail.jpg`"
             :alt="`Image: ${project.title}`"
             :loading="loading"
             width="600"
@@ -16,7 +16,7 @@
             <img
                 class="max-h-[60px]"
                 :style="named ? transition('logo') : undefined"
-                :src="`${project._path}/logo.svg`"
+                :src="`/${project.stem}/logo.svg`"
                 :alt="`Logo: ${project.title}`"
             />
         </div>
@@ -34,7 +34,7 @@ const props = defineProps<{
 }>();
 
 const transition = (part: string) => ({
-    viewTransitionName: `project-${part}-${props.project._path.replace(/[^a-z0-9]/gi, '-')}`,
+    viewTransitionName: `project-${part}-${props.project.stem.replace(/[^a-z0-9]/gi, '-')}`,
     viewTransitionClass: 'project',
 });
 </script>

@@ -69,25 +69,12 @@ import ILinkedIn from '@/assets/svg/linkedin.svg?component';
 import IArrowRight from '@/assets/svg/chevron-right.svg?component';
 
 const { data: projects } = await useAsyncData('projets', () =>
-    queryContent('/projets')
-        .limit(6)
-        .sort({
-            order: -1,
-            $numeric: true,
-        })
-        .find(),
+    queryCollection('projets').order('order', 'DESC').limit(6).all(),
 );
 
 const appConfig = useAppConfig();
 
 const { data: posts } = await useAsyncData('posts', () =>
-    queryContent('/blog')
-        .sort({
-            createdAt: -1,
-            pinned: 1,
-            $numeric: true,
-        })
-        .limit(3)
-        .find(),
+    queryCollection('blog').order('createdAt', 'DESC').order('pinned', 'ASC').limit(3).all(),
 );
 </script>

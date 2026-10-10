@@ -11,12 +11,6 @@
 definePageMeta({ middleware: 'blog' });
 
 const { data: posts } = await useAsyncData('posts', () =>
-    queryContent('/blog')
-        .sort({
-            createdAt: -1,
-            pinned: 1,
-            $numeric: true,
-        })
-        .find(),
+    queryCollection('blog').order('createdAt', 'DESC').order('pinned', 'ASC').all(),
 );
 </script>
