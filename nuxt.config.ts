@@ -15,7 +15,8 @@ export default defineNuxtConfig({
 
     fonts: {
         families: [
-            { name: 'MarvinVisions', provider: 'local', weights: [700], global: true },
+            // Its fallbacks are declared in app.css: the generated ones are based on lowercase widths and too wide
+            { name: 'MarvinVisions', provider: 'local', weights: [700], global: true, fallbacks: [] },
             { name: 'Outfit', provider: 'google', weights: [400, 500, 600, 700, 800, 900], global: true },
         ],
     },
