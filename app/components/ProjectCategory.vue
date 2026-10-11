@@ -1,6 +1,6 @@
 <template>
     <section :id="id">
-        <div class="mb-3 flex items-baseline justify-between gap-4">
+        <div class="mb-3 flex items-end justify-between gap-4 sm:items-baseline">
             <component
                 :is="heading ?? 'h2'"
                 class="text-2xl leading-tight font-semibold text-zinc-900 md:text-3xl dark:text-white"
