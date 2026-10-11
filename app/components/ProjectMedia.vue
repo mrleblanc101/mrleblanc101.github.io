@@ -27,7 +27,7 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-    project: Record<string, any>;
+    project: { stem: string; title: string };
     loading?: 'lazy';
     sizes: string;
     // Carries the shared view-transition names (only one element per name may be rendered at a time)

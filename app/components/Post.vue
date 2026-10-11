@@ -14,7 +14,7 @@
             </div>
             <!-- h3 on the home page, under its "Blog" h2 -->
             <component
-                :is="is_home ? 'h3' : 'h2'"
+                :is="isHome ? 'h3' : 'h2'"
                 class="my-1 text-xl font-bold text-black last:mb-0 md:text-3xl dark:text-white"
             >
                 {{ post.title }}
@@ -28,18 +28,16 @@
 import IPlant from '@/assets/svg/plant.svg?component';
 import IPin from '@/assets/svg/pin.svg?component';
 
-const props = defineProps({
+defineProps({
     index: {
         type: Number,
         default: 0,
-        required: true,
     },
     post: {
         type: Object,
-        default: null,
         required: true,
     },
-    is_home: {
+    isHome: {
         type: Boolean,
         default: false,
     },

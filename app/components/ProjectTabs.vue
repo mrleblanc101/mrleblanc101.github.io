@@ -1,7 +1,7 @@
 <template>
     <nav aria-label="Catégories de projets">
         <ul class="flex flex-wrap gap-2">
-            <li v-for="tab in tabs">
+            <li v-for="tab in tabs" :key="tab.to">
                 <NuxtLink
                     :to="tab.to"
                     class="block rounded-full bg-zinc-200 px-4 py-2 text-xs font-bold whitespace-nowrap uppercase transition hover:bg-zinc-300 dark:bg-zinc-800 dark:hover:bg-zinc-700"

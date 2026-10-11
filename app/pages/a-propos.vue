@@ -11,13 +11,14 @@
             </p>
         </div>
 
-        <section v-for="group in timeline">
+        <section v-for="group in timeline" :key="group.title">
             <h2 class="mb-4 text-2xl leading-tight font-semibold text-zinc-900 md:text-3xl dark:text-white">
                 {{ group.title }}
             </h2>
             <ol class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <li
                     v-for="step in group.steps"
+                    :key="step.period"
                     class="flex flex-col gap-2 rounded-xl bg-zinc-100 p-5 md:p-6 dark:bg-zinc-900"
                 >
                     <p class="text-sm font-medium tracking-wide text-zinc-500 uppercase">{{ step.period }}</p>
@@ -38,7 +39,7 @@
                 contourner. J'ai contribué entre autres à :
             </p>
             <ul class="flex flex-wrap gap-2">
-                <li v-for="project in openSource">
+                <li v-for="project in openSource" :key="project.repo">
                     <a
                         :href="`https://github.com/${project.repo}`"
                         target="_blank"

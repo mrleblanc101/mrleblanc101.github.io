@@ -59,6 +59,7 @@
                 <ul v-if="project.tags && project.tags.length" class="flex flex-wrap gap-2">
                     <li
                         v-for="tag in project.tags"
+                        :key="tag"
                         class="inline-block rounded-full bg-zinc-200 px-4 py-2 text-xs font-medium whitespace-nowrap uppercase dark:bg-zinc-800"
                     >
                         {{ tag }}
@@ -84,7 +85,6 @@ import IClose from '@/assets/svg/close.svg?component';
 const props = defineProps({
     project: {
         type: Object,
-        default: null,
         required: true,
     },
     index: {

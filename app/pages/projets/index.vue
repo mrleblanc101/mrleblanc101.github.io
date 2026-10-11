@@ -3,6 +3,7 @@
         <ProjectCategory
             v-for="section in sections"
             :id="section.slug"
+            :key="section.slug"
             :title="section.title"
             :projects="section.projects"
         />

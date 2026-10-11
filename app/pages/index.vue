@@ -38,7 +38,7 @@
                 </NuxtLink>
             </h2>
             <ul class="flex flex-col gap-4">
-                <Post v-for="(post, i) in posts" :post="post" :index="i" is_home />
+                <Post v-for="(post, i) in posts" :key="post.path" :post="post" :index="i" is-home />
             </ul>
         </section>
         <section class="mx-auto my-10 w-full max-w-(--breakpoint-2xl) px-4 lg:my-16 lg:px-8">
@@ -50,6 +50,7 @@
             <div class="flex flex-col gap-10 md:gap-16">
                 <ProjectCategory
                     v-for="section in sections"
+                    :key="section.slug"
                     :title="section.title"
                     :projects="section.projects"
                     :count="section.count"
