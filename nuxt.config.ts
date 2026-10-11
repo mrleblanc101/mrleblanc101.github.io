@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         layoutTransition: { name: 'layout', mode: 'out-in' },
     },
 
-    modules: ['@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image', '@nuxt/fonts'],
+    modules: ['@nuxt/eslint', '@nuxtjs/color-mode', '@nuxt/content', '@vueuse/nuxt', '@nuxt/image', '@nuxt/fonts'],
 
     fonts: {
         families: [
