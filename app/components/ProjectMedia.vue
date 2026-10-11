@@ -14,7 +14,7 @@
             class="absolute inset-x-0 bottom-0 flex h-[min(184px,60%)] items-end bg-linear-to-t from-black/80 to-transparent p-4 md:px-5 md:py-4"
         >
             <img
-                class="max-h-[60px] transition-transform duration-500"
+                class="max-h-[70px] transition-transform duration-500"
                 :style="named ? transition('logo') : undefined"
                 :src="`/projets/${project.stem}/logo.svg`"
                 :alt="`Logo: ${project.title}`"
