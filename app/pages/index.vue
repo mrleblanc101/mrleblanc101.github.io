@@ -2,7 +2,7 @@
     <div>
         <section class="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div
-                class="flex flex-col sm:flex-row sm:items-center sm:gap-10 lg:gap-24 xl:gap-32 relative justify-center max-w-(--breakpoint-2xl) mx-auto p-4 lg:px-8 z-0"
+                class="flex flex-col sm:flex-row sm:items-center sm:gap-10 lg:gap-24 relative justify-center max-w-(--breakpoint-2xl) mx-auto p-4 lg:px-8 z-0"
             >
                 <div class="sm:min-w-0">
                     <p class="text-lg md:text-2xl font-black text-zinc-600 dark:text-zinc-400 mb-2 md:mb-4">
