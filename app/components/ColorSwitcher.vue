@@ -1,14 +1,14 @@
 <template>
     <button
         type="button"
-        class="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-sm transition text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white focus:outline-hidden focus-visible:ring-3 ring-zinc-400 dark:ring-zinc-500"
+        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm text-zinc-600 ring-zinc-400 transition hover:text-zinc-950 focus:outline-hidden focus-visible:ring-3 dark:text-zinc-400 dark:ring-zinc-500 dark:hover:text-white"
         @click="onClick"
     >
         <span class="sr-only">Changer l'apparence</span>
         <ColorScheme placeholder="...">
-            <IMoon class="h-5" v-if="colorMode.preference === 'dark'" />
-            <ISun class="h-5" v-else-if="colorMode.preference === 'light'" />
-            <IComputer class="h-5" v-else />
+            <IMoon v-if="colorMode.preference === 'dark'" class="h-5" />
+            <ISun v-else-if="colorMode.preference === 'light'" class="h-5" />
+            <IComputer v-else class="h-5" />
         </ColorScheme>
     </button>
 </template>

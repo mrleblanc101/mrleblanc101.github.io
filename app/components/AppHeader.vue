@@ -1,9 +1,9 @@
 <template>
     <header
-        class="bg-zinc-100 dark:bg-zinc-900 z-20 border-b transition-colors duration-300"
+        class="z-20 border-b bg-zinc-100 transition-colors duration-300 dark:bg-zinc-900"
         :class="$route.name !== 'index' ? 'border-zinc-200 dark:border-zinc-800' : 'border-transparent'"
     >
-        <div class="max-w-(--breakpoint-2xl) flex gap-10 items-center w-full mx-auto px-4 lg:px-8">
+        <div class="mx-auto flex w-full max-w-(--breakpoint-2xl) items-center gap-10 px-4 lg:px-8">
             <Transition
                 enter-from-class="opacity-0 -translate-x-1.5"
                 leave-to-class="opacity-0 -translate-x-1.5"
@@ -12,12 +12,12 @@
             >
                 <NuxtLink
                     to="/"
-                    class="text-2xl lg:text-3xl font-marvin uppercase leading-[0.8] transition text-zinc-950 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
+                    class="font-marvin text-2xl leading-[0.8] text-zinc-950 uppercase transition hover:text-gray-700 lg:text-3xl dark:text-white dark:hover:text-gray-300"
                 >
                     mrleblanc101
                 </NuxtLink>
             </Transition>
-            <div class="ml-auto flex items-center gap-8 min-h-18">
+            <div class="ml-auto flex min-h-18 items-center gap-8">
                 <Transition
                     enter-from-class="translate-x-full"
                     leave-to-class="translate-x-full"
@@ -27,20 +27,20 @@
                     <nav
                         v-show="menuOpened"
                         v-on-click-outside.bubble="onClickOutside"
-                        class="max-lg:p-4 sm:max-md:border-l sm:max-md:border-zinc-300 sm:max-md:dark:border-zinc-800 max-sm:w-full max-md:w-96 max-md:fixed max-md:top-0 max-md:right-0 max-md:bottom-0 max-md:h-dvh max-md:bg-zinc-100 max-md:dark:bg-zinc-950 max-md:z-0 max-md:shadow-lg flex flex-col md:flex! md:transform-none! z-50"
+                        class="z-50 flex flex-col max-lg:p-4 max-md:fixed max-md:top-0 max-md:right-0 max-md:bottom-0 max-md:z-0 max-md:h-dvh max-md:w-96 max-md:bg-zinc-100 max-md:shadow-lg max-sm:w-full sm:max-md:border-l sm:max-md:border-zinc-300 md:flex! md:transform-none! max-md:dark:bg-zinc-950 sm:max-md:dark:border-zinc-800"
                     >
                         <button
                             type="button"
-                            class="ml-auto mb-4 md:hidden shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-sm transition text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white focus:outline-hidden focus-visible:ring-3 ring-zinc-400 dark:ring-zinc-500"
+                            class="mb-4 ml-auto inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm text-zinc-600 ring-zinc-400 transition hover:text-zinc-950 focus:outline-hidden focus-visible:ring-3 md:hidden dark:text-zinc-400 dark:ring-zinc-500 dark:hover:text-white"
                             @click.stop="menuOpened = false"
                         >
                             <span class="sr-only">Fermer le menu</span>
-                            <IClose class="w-6 h-6" />
+                            <IClose class="h-6 w-6" />
                         </button>
-                        <ul class="flex flex-col md:flex-row md:gap-10 font-medium">
+                        <ul class="flex flex-col font-medium md:flex-row md:gap-10">
                             <li v-if="appConfig.blog">
                                 <NuxtLink
-                                    class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-800 transition-colors text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                                    class="block text-zinc-600 transition-colors hover:text-zinc-950 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:pb-5 max-md:text-lg dark:text-zinc-400 dark:hover:text-white max-md:dark:border-zinc-800"
                                     to="/blog"
                                 >
                                     Blog
@@ -48,7 +48,7 @@
                             </li>
                             <li>
                                 <NuxtLink
-                                    class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-800 transition-colors text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                                    class="block text-zinc-600 transition-colors hover:text-zinc-950 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:pb-5 max-md:text-lg dark:text-zinc-400 dark:hover:text-white max-md:dark:border-zinc-800"
                                     to="/projets"
                                 >
                                     Projets
@@ -56,7 +56,7 @@
                             </li>
                             <li>
                                 <NuxtLink
-                                    class="block max-md:text-lg max-md:pb-5 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:dark:border-zinc-800 transition-colors text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                                    class="block text-zinc-600 transition-colors hover:text-zinc-950 max-md:mb-5 max-md:border-b max-md:border-zinc-300 max-md:pb-5 max-md:text-lg dark:text-zinc-400 dark:hover:text-white max-md:dark:border-zinc-800"
                                     to="/a-propos"
                                 >
                                     À propos
@@ -70,11 +70,11 @@
                     <button
                         ref="menuBtn"
                         type="button"
-                        class="md:hidden shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-sm transition text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white focus:outline-hidden focus-visible:ring-3 ring-zinc-400 dark:ring-zinc-500"
+                        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-sm text-zinc-600 ring-zinc-400 transition hover:text-zinc-950 focus:outline-hidden focus-visible:ring-3 md:hidden dark:text-zinc-400 dark:ring-zinc-500 dark:hover:text-white"
                         @click.stop="menuOpened = true"
                     >
                         <span class="sr-only">Ouvrir le menu</span>
-                        <IHamburger class="w-4 h-4" />
+                        <IHamburger class="h-4 w-4" />
                     </button>
                 </div>
             </div>

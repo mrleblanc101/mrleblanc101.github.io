@@ -3,13 +3,13 @@
         <article v-if="doc">
             <!-- <div class="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800"> -->
             <Teleport to=".header-inner">
-                <div class="max-w-(--breakpoint-2xl) mx-auto p-4 lg:px-8 lg:py-16 z-0">
+                <div class="z-0 mx-auto max-w-(--breakpoint-2xl) p-4 lg:px-8 lg:py-16">
                     <h1
-                        class="text-4xl leading-[1.1111111] font-extrabold text-black dark:text-white lg:leading-none lg:text-[3.5rem]"
+                        class="text-4xl leading-[1.1111111] font-extrabold text-black lg:text-[3.5rem] lg:leading-none dark:text-white"
                     >
                         {{ doc.title }}
                     </h1>
-                    <div class="text-lg mt-3 opacity-70">
+                    <div class="mt-3 text-lg opacity-70">
                         <span>{{ formatDate(doc.createdAt) }}</span> ·
                         <span :data-minutes="doc.readingTime.minutes"
                             >{{ formatDuration(doc.readingTime.minutes) }} minutes</span
@@ -19,31 +19,31 @@
             </Teleport>
 
             <!-- </div> -->
-            <div class="max-w-(--breakpoint-2xl) mx-auto px-4 py-8 lg:px-8 lg:py-16 z-0">
+            <div class="z-0 mx-auto max-w-(--breakpoint-2xl) px-4 py-8 lg:px-8 lg:py-16">
                 <ContentRenderer class="prose prose-xl dark:prose-invert" :value="doc" />
-                <div class="flex flex-col md:flex-row gap-4 mt-8 md:mt-16">
+                <div class="mt-8 flex flex-col gap-4 md:mt-16 md:flex-row">
                     <NuxtLink
-                        class="md:mr-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-sm transition w-full md:max-w-sm"
                         v-if="prev"
+                        class="w-full rounded-sm border border-zinc-200 bg-zinc-100 p-6 transition hover:bg-zinc-200 md:mr-auto md:max-w-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800"
                         :to="prev.path"
                     >
-                        <div class="opacity-70 font-medium">Précédent</div>
-                        <div class="font-bold text-xl">{{ prev.title }}</div>
+                        <div class="font-medium opacity-70">Précédent</div>
+                        <div class="text-xl font-bold">{{ prev.title }}</div>
                     </NuxtLink>
                     <NuxtLink
-                        class="md:ml-auto p-6 bg-zinc-100 border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-sm transition w-full md:max-w-sm"
                         v-if="next"
+                        class="w-full rounded-sm border border-zinc-200 bg-zinc-100 p-6 transition hover:bg-zinc-200 md:ml-auto md:max-w-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800"
                         :to="next.path"
                     >
-                        <div class="opacity-70 font-medium">Suivant</div>
-                        <div class="font-bold text-xl">{{ next.title }}</div>
+                        <div class="font-medium opacity-70">Suivant</div>
+                        <div class="text-xl font-bold">{{ next.title }}</div>
                     </NuxtLink>
                 </div>
                 <ClientOnly>
                     <!-- Disqus reads these to pick its theme and can't parse Tailwind's oklch() colors: same colors as the page, in hex -->
                     <Disqus
-                        class="mt-8 text-[#364153] bg-white dark:text-[#d1d5dc] dark:bg-[#09090b]"
                         :key="colorMode.value"
+                        class="mt-8 bg-white text-[#364153] dark:bg-[#09090b] dark:text-[#d1d5dc]"
                     />
                 </ClientOnly>
             </div>

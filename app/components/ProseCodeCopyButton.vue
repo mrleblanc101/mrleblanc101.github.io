@@ -3,8 +3,8 @@
         <span class="sr-only select-none">Copier dans le presse-papiers</span>
         <span class="icon-wrapper">
             <Transition name="fade">
-                <IconClipboardCheck v-if="state === 'copied'" class="icon w-5 h-5" />
-                <IconClipboardCopy v-else class="icon w-5 h-5" />
+                <IconClipboardCheck v-if="state === 'copied'" class="icon h-5 w-5" />
+                <IconClipboardCopy v-else class="icon h-5 w-5" />
             </Transition>
         </span>
     </button>

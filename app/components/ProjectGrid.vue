@@ -1,5 +1,5 @@
 <template>
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Project
             v-for="(projet, i) in projects"
             :key="projet.id"

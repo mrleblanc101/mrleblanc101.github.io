@@ -1,7 +1,7 @@
 <template>
-    <div class="min-h-screen flex flex-col">
+    <div class="flex min-h-screen flex-col">
         <AppHeader />
-        <main class="grow w-full">
+        <main class="w-full grow">
             <slot></slot>
         </main>
         <AppFooter />
@@ -31,7 +31,7 @@ useHead({
         {
             rel: 'manifest',
             href: '/manifest.json',
-        }
+        },
     ],
     htmlAttrs: {
         lang: 'fr',

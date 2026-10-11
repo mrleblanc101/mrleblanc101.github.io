@@ -9,7 +9,7 @@
         -->
         <button
             type="button"
-            class="group block w-full text-left rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 focus:outline-hidden focus-visible:ring-4 ring-zinc-400"
+            class="group block w-full overflow-hidden rounded-xl bg-zinc-100 text-left ring-zinc-400 focus:outline-hidden focus-visible:ring-4 dark:bg-zinc-900"
             :class="{ invisible: isOpen }"
             :style="isAnimating && !isOpen ? cardTransition : undefined"
             aria-haspopup="dialog"
@@ -26,7 +26,7 @@
         </button>
         <dialog
             ref="dialogRef"
-            class="p-0 m-auto w-[calc(100%-2rem)] max-w-4xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-xl bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-300 project-dialog backdrop:bg-black/70"
+            class="project-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-y-auto overscroll-contain rounded-xl bg-white p-0 text-gray-700 backdrop:bg-black/70 dark:bg-zinc-900 dark:text-gray-300"
             :style="isOpen ? cardTransition : undefined"
             :aria-label="project.title"
             @cancel.prevent="close"
@@ -47,19 +47,19 @@
             >
                 <button
                     type="button"
-                    class="absolute top-3 right-3 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition"
+                    class="absolute top-3 right-3 rounded-full bg-black/50 p-2 text-white transition hover:bg-black/70"
                     @click="close"
                 >
-                    <IClose class="w-5 h-5" />
+                    <IClose class="h-5 w-5" />
                     <span class="sr-only">Fermer</span>
                 </button>
             </ProjectMedia>
-            <div class="p-4 md:p-5 flex flex-col gap-4">
+            <div class="flex flex-col gap-4 p-4 md:p-5">
                 <p v-if="project.description">{{ project.description }}</p>
-                <ul class="flex flex-wrap gap-2" v-if="project.tags && project.tags.length">
+                <ul v-if="project.tags && project.tags.length" class="flex flex-wrap gap-2">
                     <li
                         v-for="tag in project.tags"
-                        class="inline-block px-4 py-2 bg-zinc-200 dark:bg-zinc-800 font-medium text-xs uppercase rounded-full whitespace-nowrap"
+                        class="inline-block rounded-full bg-zinc-200 px-4 py-2 text-xs font-medium whitespace-nowrap uppercase dark:bg-zinc-800"
                     >
                         {{ tag }}
                     </li>
@@ -68,7 +68,7 @@
                     v-if="project.url"
                     :href="project.url"
                     target="_blank"
-                    class="inline-flex self-start gap-1 font-bold text-zinc-900 dark:text-white hover:opacity-70 transition"
+                    class="inline-flex gap-1 self-start font-bold text-zinc-900 transition hover:opacity-70 dark:text-white"
                 >
                     Voir le projet <IArrowRight class="w-5" />
                 </a>

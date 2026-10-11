@@ -1,7 +1,7 @@
 <template>
     <div class="relative overflow-hidden" :style="named ? transition('image') : undefined">
         <NuxtPicture
-            class="block [&_img]:w-full transition-transform duration-500 motion-safe:group-hover:scale-105"
+            class="block transition-transform duration-500 motion-safe:group-hover:scale-105 [&_img]:w-full"
             :src="`/projets/${project.stem}/thumbnail.jpg`"
             :alt="`Image: ${project.title}`"
             :loading="loading"
@@ -11,7 +11,7 @@
             :sizes="sizes"
         />
         <div
-            class="absolute inset-x-0 bottom-0 h-[min(184px,60%)] p-4 md:px-5 md:py-4 flex items-end bg-linear-to-t from-black/80 to-transparent"
+            class="absolute inset-x-0 bottom-0 flex h-[min(184px,60%)] items-end bg-linear-to-t from-black/80 to-transparent p-4 md:px-5 md:py-4"
         >
             <img
                 class="max-h-[60px] transition-transform duration-500"

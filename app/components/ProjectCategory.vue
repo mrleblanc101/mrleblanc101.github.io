@@ -1,14 +1,14 @@
 <template>
     <section :id="id">
-        <div class="flex items-baseline justify-between gap-4 mb-3">
+        <div class="mb-3 flex items-baseline justify-between gap-4">
             <component
                 :is="heading ?? 'h2'"
-                class="font-semibold text-2xl md:text-3xl leading-tight text-zinc-900 dark:text-white"
+                class="text-2xl leading-tight font-semibold text-zinc-900 md:text-3xl dark:text-white"
             >
                 {{ title }}
                 <!-- Own line on mobile, after the title from sm up -->
                 <span
-                    class="block sm:inline mt-1 sm:mt-0 font-normal text-base md:text-lg text-zinc-500 whitespace-nowrap"
+                    class="mt-1 block text-base font-normal whitespace-nowrap text-zinc-500 sm:mt-0 sm:inline md:text-lg"
                 >
                     <span class="hidden sm:inline">·</span> {{ total }} projet{{ total > 1 ? 's' : '' }}
                 </span>
@@ -16,7 +16,7 @@
             <NuxtLink
                 v-if="link"
                 :to="link"
-                class="group inline-flex shrink-0 items-center gap-1 text-sm md:text-base font-medium transition-colors text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                class="group inline-flex shrink-0 items-center gap-1 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-950 md:text-base dark:text-zinc-400 dark:hover:text-white"
             >
                 Voir tout
                 <IArrowRight class="w-4 transition-transform motion-safe:group-hover:translate-x-1" />

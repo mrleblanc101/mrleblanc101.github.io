@@ -1,7 +1,7 @@
 <template>
-    <div class="max-w-(--breakpoint-2xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8 flex flex-col gap-10 md:gap-16">
+    <div class="mx-auto my-6 flex w-full max-w-(--breakpoint-2xl) flex-col gap-10 px-4 md:gap-16 lg:my-16 lg:px-8">
         <div>
-            <h1 class="font-marvin text-black dark:text-white uppercase text-3xl md:text-5xl mb-4 tracking-wide">
+            <h1 class="mb-4 font-marvin text-3xl tracking-wide text-black uppercase md:text-5xl dark:text-white">
                 Projets<span v-if="category" class="sr-only"> : {{ category.title }}</span>
             </h1>
             <ProjectTabs />

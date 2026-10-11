@@ -1,10 +1,10 @@
 <template>
-    <div class="max-w-(--breakpoint-2xl) w-full mx-auto px-4 my-6 lg:my-16 lg:px-8 flex flex-col gap-10 md:gap-16">
+    <div class="mx-auto my-6 flex w-full max-w-(--breakpoint-2xl) flex-col gap-10 px-4 md:gap-16 lg:my-16 lg:px-8">
         <div class="max-w-3xl">
-            <h1 class="font-marvin text-black dark:text-white uppercase text-3xl md:text-5xl mb-4 tracking-wide">
+            <h1 class="mb-4 font-marvin text-3xl tracking-wide text-black uppercase md:text-5xl dark:text-white">
                 À propos
             </h1>
-            <p class="text-lg md:text-xl leading-relaxed">
+            <p class="text-lg leading-relaxed md:text-xl">
                 Je suis Sébastien, développeur Front-End à Québec. Je conçois des interfaces avec Vue.js et Nuxt, et je
                 touche aussi au back-end avec Laravel quand le projet le demande. En dehors du travail, je donne de mon
                 temps à la communauté web de Québec et aux outils open-source que j'utilise tous les jours.
@@ -12,16 +12,16 @@
         </div>
 
         <section v-for="group in timeline">
-            <h2 class="font-semibold text-2xl md:text-3xl leading-tight text-zinc-900 dark:text-white mb-4">
+            <h2 class="mb-4 text-2xl leading-tight font-semibold text-zinc-900 md:text-3xl dark:text-white">
                 {{ group.title }}
             </h2>
-            <ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <ol class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <li
                     v-for="step in group.steps"
-                    class="flex flex-col gap-2 p-5 md:p-6 rounded-xl bg-zinc-100 dark:bg-zinc-900"
+                    class="flex flex-col gap-2 rounded-xl bg-zinc-100 p-5 md:p-6 dark:bg-zinc-900"
                 >
-                    <p class="text-sm font-medium uppercase tracking-wide text-zinc-500">{{ step.period }}</p>
-                    <h3 class="font-semibold text-xl text-zinc-900 dark:text-white">{{ step.place }}</h3>
+                    <p class="text-sm font-medium tracking-wide text-zinc-500 uppercase">{{ step.period }}</p>
+                    <h3 class="text-xl font-semibold text-zinc-900 dark:text-white">{{ step.place }}</h3>
                     <p class="font-medium text-zinc-600 dark:text-zinc-400">{{ step.title }}</p>
                     <p v-if="step.description">{{ step.description }}</p>
                 </li>
@@ -29,10 +29,10 @@
         </section>
 
         <section>
-            <h2 class="font-semibold text-2xl md:text-3xl leading-tight text-zinc-900 dark:text-white mb-2">
+            <h2 class="mb-2 text-2xl leading-tight font-semibold text-zinc-900 md:text-3xl dark:text-white">
                 Open-source
             </h2>
-            <p class="max-w-3xl mb-4">
+            <p class="mb-4 max-w-3xl">
                 Je contribue aux outils de l'écosystème Vue.js et Laravel que j'utilise au quotidien : quand je tombe
                 sur un bogue ou qu'il manque quelque chose, j'essaie de proposer un correctif plutôt que de le
                 contourner. J'ai contribué entre autres à :
@@ -42,7 +42,7 @@
                     <a
                         :href="`https://github.com/${project.repo}`"
                         target="_blank"
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-colors bg-zinc-100 text-zinc-700 hover:bg-zinc-200 hover:text-zinc-950 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white"
+                        class="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-4 py-2 font-medium text-zinc-700 transition-colors hover:bg-zinc-200 hover:text-zinc-950 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white"
                     >
                         <IGithub class="w-4" />
                         {{ project.name }}
@@ -52,7 +52,7 @@
         </section>
 
         <section class="max-w-3xl">
-            <h2 class="font-semibold text-2xl md:text-3xl leading-tight text-zinc-900 dark:text-white mb-2">
+            <h2 class="mb-2 text-2xl leading-tight font-semibold text-zinc-900 md:text-3xl dark:text-white">
                 En dehors du code
             </h2>
             <p>

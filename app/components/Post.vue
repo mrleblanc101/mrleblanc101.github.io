@@ -1,21 +1,21 @@
 <template>
     <li>
         <NuxtLink
-            class="flex flex-col rounded-sm p-6 border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-100/60 dark:hover:bg-zinc-800/60 transition duration-300 h-full"
+            class="flex h-full flex-col rounded-sm border border-zinc-200 bg-zinc-100 p-6 transition duration-300 hover:bg-zinc-100/60 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800/60"
             :to="post.path"
         >
-            <div v-if="post.pinned" class="flex items-center text-lg gap-2 font-medium">
+            <div v-if="post.pinned" class="flex items-center gap-2 text-lg font-medium">
                 <IPin class="h-6 w-6" />
                 <span class="opacity-75">Épinglé</span>
             </div>
-            <div v-else-if="index === 0" class="flex items-center text-lg gap-2 font-medium">
+            <div v-else-if="index === 0" class="flex items-center gap-2 text-lg font-medium">
                 <IPlant class="h-5 w-6" />
                 <span class="opacity-75">Dernier article</span>
             </div>
             <!-- h3 on the home page, under its "Blog" h2 -->
             <component
                 :is="is_home ? 'h3' : 'h2'"
-                class="font-bold text-black dark:text-white text-xl md:text-3xl my-1 last:mb-0"
+                class="my-1 text-xl font-bold text-black last:mb-0 md:text-3xl dark:text-white"
             >
                 {{ post.title }}
             </component>
