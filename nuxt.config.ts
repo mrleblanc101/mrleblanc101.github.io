@@ -25,6 +25,8 @@ export default defineNuxtConfig({
         build: {
             markdown: {
                 highlight: {
+                    // Replaces the default list, which doesn't include diff
+                    langs: ['js', 'ts', 'vue', 'json', 'html', 'css', 'shell', 'yaml', 'md', 'diff'],
                     theme: {
                         default: 'solarized-light',
                         dark: 'solarized-dark',

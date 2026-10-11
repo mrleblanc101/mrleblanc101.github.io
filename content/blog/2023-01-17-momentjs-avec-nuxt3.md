@@ -50,7 +50,6 @@ Il s'agit d'une erreur déroutante que j'ai pris bien du temps à corriger, mais
 Avec Vite.js, il faut simplement changer l'import des locales comme ceci:
 ```diff
 - import 'moment/locale/fr-ca';
-
 + import 'moment/dist/locale/fr-ca';
 ```
 
