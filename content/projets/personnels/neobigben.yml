@@ -1,11 +1,9 @@
 title: NeoBigben
 url: https://mrleblanc101.github.io/neobigben/
-order: 3
+order: 2
 description: Afin d'explorer les nouveautés de Nuxt 3, j'ai développé une petite application de Time Tracking pendant le temps des fêtes 2022-2023. Cela m'a permis de faire mes premiers pas avec Vue 3 et TypeScript.
 tags:
-- SSG
-- Nuxt.js 3
-- Vue.js 3
-- Tailwindcss
-- i18n
-- TypeScript
+- Nuxt
+- Vue.js
+- Firebase
+- Supabase

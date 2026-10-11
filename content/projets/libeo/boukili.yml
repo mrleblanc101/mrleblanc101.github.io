@@ -1,10 +1,8 @@
 title: Boukili
 url: https://app.boukili.ca/
-order: 10
+order: 17
 description: Boukili a pour but de promouvoir la langue de Molière par la lecture, des jeux et des questionnaires en français, via une application ludique pour les enfants et le monde de la pédagogie francophone.
 tags:
-- App
-- iOS
-- Android
+- Application
 - Quasar Framework
 - Cordova

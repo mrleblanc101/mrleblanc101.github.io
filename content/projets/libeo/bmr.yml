@@ -1,10 +1,7 @@
 title: L'atelier
 url: https://atelier.bmr.co/
-order: 3
+order: 8
 description: L'espace marchand du Groupe BMR permet aux différents quincailliers indépendants d'avoir accès à une foule d'informations telles que les changements de prix à venir, les errata des circulaires, une estimation du prix du bois d'oeuvre à venir, ainsi qu'une foule d'informations pertinentes.
 tags:
-- Vue.js 2
-- Foundation
-- Headless
+- Vue.js
 - Django
-- Auth

@@ -1,3 +1,4 @@
+import { resolve } from 'node:path';
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
 
 // Dot-prefixed files are drafts
@@ -16,7 +17,7 @@ export default defineContentConfig({
         }),
         projets: defineCollection({
             type: 'data',
-            source: { include: 'projets/**/*.yml', exclude },
+            source: { cwd: resolve('content/projets'), include: '**/*.yml', exclude },
             schema: z.object({
                 title: z.string(),
                 url: z.string().optional(),

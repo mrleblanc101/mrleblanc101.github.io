@@ -2,7 +2,7 @@
     <div class="relative overflow-hidden" :style="named ? transition('image') : undefined">
         <NuxtPicture
             class="block [&_img]:w-full transition-transform duration-500 motion-safe:group-hover:scale-105"
-            :src="`/${project.stem}/thumbnail.jpg`"
+            :src="`/projets/${project.stem}/thumbnail.jpg`"
             :alt="`Image: ${project.title}`"
             :loading="loading"
             width="600"
@@ -16,7 +16,7 @@
             <img
                 class="max-h-[60px] transition-transform duration-500"
                 :style="named ? transition('logo') : undefined"
-                :src="`/${project.stem}/logo.svg`"
+                :src="`/projets/${project.stem}/logo.svg`"
                 :alt="`Logo: ${project.title}`"
             />
         </div>

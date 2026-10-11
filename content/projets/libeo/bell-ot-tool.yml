@@ -1,6 +1,5 @@
 title: Bell OT Tool
-order: 8
+order: 14
 description: Dans le but de simplifier sa gestion des heures supplémentaires, Bell Canada se dote d'une plateforme d'approbation des demandes ainsi que de la gestion de la consommation des heures accumulées.
 tags:
 - Django
-- Foundation

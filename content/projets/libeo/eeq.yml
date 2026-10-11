@@ -1,10 +1,8 @@
 title: École des entrepreneurs du Québec
 url: https://app.eequebec.com/
-order: 19
+order: 26
 description: L'École des entrepreneurs du Québec (ÉEQ) ouvre son Campus Virtuel afin d'aider les jeunes entrepreneurs à développer leurs compétences entrepreneuriales grâce à ses nombreuses formations en ligne.
 tags:
-- Vue.js 2
-- Nuxt.js 2
-- Foundation
-- Auth
-- i18n
+- Vue.js
+- Nuxt
+- Laravel

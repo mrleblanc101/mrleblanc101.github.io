@@ -1,9 +1,7 @@
 title: masw.ai
 url: https://masw.ai/
-order: 15
+order: 22
 description: La réalisation de cette plateforme a permis à GPR d'être la première et seule plateforme de traitement MASW assistée par sa solution novatrice d'apprentissage automatique sur le Cloud.
 tags:
-- Vue.js 2
-- Nuxt.js 2
-- Auth
-- i18n
+- Vue.js
+- Nuxt
