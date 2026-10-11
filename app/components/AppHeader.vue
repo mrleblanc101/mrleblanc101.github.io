@@ -12,7 +12,7 @@
             >
                 <NuxtLink
                     to="/"
-                    class="text-2xl lg:text-3xl font-marvin uppercase leading-[0.8] transition hover:text-zinc-950 dark:hover:text-white"
+                    class="text-2xl lg:text-3xl font-marvin uppercase leading-[0.8] transition text-zinc-950 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
                 >
                     mrleblanc101
                 </NuxtLink>
