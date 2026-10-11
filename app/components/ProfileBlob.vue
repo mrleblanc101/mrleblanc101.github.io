@@ -1,5 +1,5 @@
 <template>
-    <svg ref="svg" viewBox="0 0 1000 1040" role="img" :aria-label="alt">
+    <svg ref="svg" viewBox="80 12 832 1012" role="img" :aria-label="alt">
         <defs>
             <clipPath id="profile-blob-reveal">
                 <!-- Body: only visible inside the blob -->
