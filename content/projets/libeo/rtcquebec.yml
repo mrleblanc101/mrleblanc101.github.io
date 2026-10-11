@@ -1,7 +1,7 @@
 title: Réseau de transport de la Capitale
 url: https://www.rtcquebec.ca/
 order: 7
-description: Au terme d'un processus d'appel d'offres rigoureux, Libéo a fièrement été sélectionnée pour remplacer le système de gestion de contenu du RTC. Ce projet apportera le RTC dans le monde moderne avec un site web responsive !
+description: "Au terme d'un processus d'appel d'offres rigoureux, Libéo a été sélectionnée pour remplacer le système de gestion de contenu du RTC. Ce projet dote le RTC d'un site web moderne et adaptatif qui permet de consulter les horaires planifiés et les passages des autobus en temps réel."
 tags:
 - Vue.js
 - Nuxt

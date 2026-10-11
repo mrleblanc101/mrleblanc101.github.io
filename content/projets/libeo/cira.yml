@@ -1,7 +1,7 @@
 title: CIRA Bouclier Canadien
 url: https://chrome.google.com/webstore/detail/cira-canadian-shield/ooeeeeagdccjhajmnpjenpkmphbkppnp
 order: 23
-description: Le registraire du domaine .CA cherche à créer une extension Chrome et Firefox tirant parti de sa large liste de sites frauduleux afin de protéger gratuitement les Canadiens tout en respectant les nouvelles règles du Manifest V3 de Google.
+description: "CIRA, le registraire du domaine .CA lance CIRA Bouclier Canadien, une extension Chrome et Firefox gratuite qui tire parti de sa large liste de sites malveillants pour protéger les Canadiens contre l'hameçonnage, les logiciels malveillants et les arnaques."
 tags:
 - WebExtension
 - Manifest v3

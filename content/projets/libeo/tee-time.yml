@@ -1,2 +1,9 @@
 title: Tee Time
+url: https://tee-time.ca/
 order: 29
+description: "Plateforme de réservation permettant aux golfeurs de trouver un club et un départ disponible à l'heure qui leur convient, en seulement quatre clics."
+tags:
+- Vue.js
+- Inertia.js
+- Laravel
+- Laravel Nova

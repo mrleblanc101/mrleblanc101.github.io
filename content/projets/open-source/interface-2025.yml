@@ -1,3 +1,8 @@
 title: Interface Québec - 2025
-url: https://2025.interfaceqc.ca
+url: https://2025.interfaceqc.com
 order: 3
+description: "Site web de l'édition 2025 d'Interface, l'événement québécois dédié au numérique, développé bénévolement pour présenter la programmation, les conférenciers et la billetterie."
+tags:
+- Vue.js
+- Nuxt
+- Prismic

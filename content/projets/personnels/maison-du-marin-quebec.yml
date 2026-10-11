@@ -1,3 +1,8 @@
 title: Maison du marin Québec
 url: https://mrleblanc101.github.io/maison-du-marin-quebec/
 order: 3
+description: "La Maison du Marin Québec accueille les marins de passage au port de Québec. J'ai développé une page leur permettant de découvrir rapidement les services offerts par l'organisme."
+tags:
+- Nuxt
+- Vue.js
+- Nuxt Content

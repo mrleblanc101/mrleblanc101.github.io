@@ -1,2 +1,8 @@
 title: Système de documentation
 order: 34
+description: "Plateforme interne centralisant les normes, guides et documentation de Libéo pour les développeurs, designers, QA, DevOps et administrateurs système."
+tags:
+- Vue.js
+- Inertia.js
+- Laravel
+- Filamentphp

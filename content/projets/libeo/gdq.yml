@@ -1,2 +1,6 @@
 title: Grains du Québec
+url: https://grainsduquebec.ca/
 order: 32
+description: "Volet grand public des Producteurs de grains du Québec, Grains du Québec fait découvrir les grains d'ici, les producteurs qui les cultivent et des recettes pour les mettre en valeur au quotidien."
+tags:
+- TYPO3

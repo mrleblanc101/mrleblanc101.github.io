@@ -1,3 +1,8 @@
 title: Interface Québec - 2026
-url: https://2026.interfaceqc.ca
+url: https://2026.interfaceqc.com
 order: 4
+description: "Site web de l'édition 2026 d'Interface, l'événement québécois dédié au numérique, développé bénévolement pour présenter la programmation, les conférenciers et la billetterie."
+tags:
+- Vue.js
+- Nuxt
+- Prismic

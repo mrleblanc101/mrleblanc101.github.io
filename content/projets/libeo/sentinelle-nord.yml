@@ -1,7 +1,7 @@
 title: Rapports d’activités 2021-2022
-# url: https://sentinellenord.ulaval.ca/rapport-activites-2021-2022/
+url: https://rapport-activites-2021-2022.sentinellenord.ulaval.ca/
 order: 27
-description: Sentinelle Nord cherche à mettre en valeur le résultat de ses recherches. Grâce à ce nouveau micro-site, les données n'auront jamais été si bien mises en valeur !
+description: "Sentinelle Nord présente son rapport d'activités annuel sous la forme d'un microsite interactif, mettant en lumière ses avancées en environnement, en santé et en innovation pour un Nord durable."
 tags:
 - Vue.js
 - Nuxt

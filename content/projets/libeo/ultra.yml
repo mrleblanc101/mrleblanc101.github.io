@@ -1,2 +1,7 @@
 title: Ultra
 order: 30
+description: "Projet confidentiel réalisé pour Ultra Intelligence & Communications. Les détails ne peuvent pas être divulgués."
+tags:
+- Vue.js
+- Nuxt
+- IoT

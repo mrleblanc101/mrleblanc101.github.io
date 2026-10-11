@@ -1,2 +1,8 @@
 title: Vinci Construction
 order: 36
+description: "Portail client pour l'ensemble des filiales de Vinci Construction, permettant de consulter en toute simplicité les états de compte, factures, tickets de pesée et rapports V-150."
+tags:
+- Vue.js
+- Nuxt
+- Laravel
+- Filamentphp
