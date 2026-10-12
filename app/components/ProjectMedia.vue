@@ -6,7 +6,7 @@
             :alt="`Image: ${project.title}`"
             :loading="loading"
             width="600"
-            height="365"
+            height="375"
             quality="80"
             :sizes="sizes"
         />
