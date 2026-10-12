@@ -8,6 +8,7 @@
             Hidden while open: the dialog has taken over the names.
         -->
         <button
+            ref="tileRef"
             type="button"
             class="group block w-full overflow-hidden rounded-xl bg-zinc-100 text-left ring-zinc-400 focus:outline-hidden focus-visible:ring-4 dark:bg-zinc-900"
             :class="{ invisible: isOpen }"
@@ -99,6 +100,7 @@ const props = defineProps({
 });
 
 const dialogRef = ref<HTMLDialogElement | null>(null);
+const tileRef = ref<HTMLButtonElement | null>(null);
 const isOpen = ref(false);
 
 // The tile and the dialog share these names, so the tile morphs into the dialog
@@ -109,9 +111,19 @@ const cardTransition = {
 
 const isAnimating = ref(false);
 
-async function withViewTransition(direction: 'open' | 'close', update: () => Promise<void>) {
+type Direction = 'open' | 'close';
+type Transition = { ready: Promise<void>; finished: Promise<void> };
+
+// The transition in progress, and the state it is currently heading to
+let active: { transition: Transition; direction: Direction } | null = null;
+
+async function withViewTransition(direction: Direction, update: () => Promise<void>) {
+    if (active) {
+        if (active.direction !== direction) reverseTransition(active, direction, update);
+        return;
+    }
     const doc = document as Document & {
-        startViewTransition?: (cb: () => Promise<void>) => { finished: Promise<void> };
+        startViewTransition?: (cb: () => Promise<void>) => Transition;
     };
     if (!doc.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) {
         await update();
@@ -121,10 +133,53 @@ async function withViewTransition(direction: 'open' | 'close', update: () => Pro
     isAnimating.value = true;
     document.documentElement.dataset.projectTransition = direction;
     await nextTick();
-    doc.startViewTransition(update).finished.finally(() => {
+    const transition = doc.startViewTransition(update);
+    active = { transition, direction };
+    document.addEventListener('click', onTransitionClick);
+    transition.finished.finally(() => {
+        document.removeEventListener('click', onTransitionClick);
+        active = null;
         isAnimating.value = false;
         delete document.documentElement.dataset.projectTransition;
     });
+}
+
+/*
+ * Starting a new transition would skip the current one to its end (the dialog would jump),
+ * so the running animations are played backwards instead, and the state is applied once they're back at the start.
+ */
+async function reverseTransition(
+    current: NonNullable<typeof active>,
+    direction: Direction,
+    update: () => Promise<void>,
+) {
+    current.direction = direction;
+    // The animations only exist once the new state has been captured
+    await current.transition.ready.catch(() => {});
+    const animations = document
+        .getAnimations()
+        .filter((animation) =>
+            (animation.effect as KeyframeEffect | null)?.pseudoElement?.startsWith('::view-transition'),
+        );
+    animations.forEach((animation) => animation.reverse());
+    await Promise.all(animations.map((animation) => animation.finished.catch(() => {})));
+    // Reversed again in the meantime: the latest call applies its own state
+    if (current.direction === direction) await update();
+}
+
+function isInside(element: Element | null, { clientX, clientY }: MouseEvent) {
+    const rect = element?.getBoundingClientRect();
+    return !!rect && clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+}
+
+/*
+ * During a view transition, every click targets the root element (the page is only a snapshot),
+ * so the backdrop and the tile are found by position, from where they are in the new state
+ */
+function onTransitionClick(event: MouseEvent) {
+    if (event.target !== document.documentElement) return;
+    if (active?.direction === 'open' && !isInside(dialogRef.value, event)) close();
+    else if (active?.direction === 'close' && isInside(tileRef.value, event)) open();
 }
 
 function open() {
@@ -178,6 +233,36 @@ html:has(dialog[open]) {
     overflow: clip;
     /* Same as the tile and dialog (rounded-xl) */
     border-radius: var(--radius-xl);
+}
+
+/*
+ * Chrome renders the default crossfade wrong once it's reversed (the old snapshot jumps back to fully opaque,
+ * so the backdrop disappears at once): the same crossfade with explicit keyframes reverses smoothly.
+ * Replacing the animation names drops the default blend mode animation, so it's set here instead.
+ */
+html[data-project-transition]::view-transition-old(*) {
+    animation-name: project-fade-out;
+    mix-blend-mode: plus-lighter;
+}
+html[data-project-transition]::view-transition-new(*) {
+    animation-name: project-fade-in;
+    mix-blend-mode: plus-lighter;
+}
+@keyframes project-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes project-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /*
