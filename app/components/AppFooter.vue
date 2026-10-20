@@ -1,7 +1,9 @@
 <template>
     <footer class="mx-auto flex w-full max-w-(--breakpoint-2xl) items-center justify-between gap-4 p-4 lg:px-8">
         <div>
-            &copy; {{ new Date().getFullYear() }} Sébastien LeBlanc. Tous droits réservés.
+            <div class="text-balance">
+                &copy; {{ new Date().getFullYear() }} Sébastien LeBlanc. Tous droits réservés.
+            </div>
             <div v-if="gitShortSha" class="mt-1 font-mono text-xs text-zinc-500">
                 Version: {{ [gitTag, gitShortSha].filter(Boolean).join(' • ') }}
             </div>
