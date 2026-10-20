@@ -1,8 +1,13 @@
 {
     "name": "mrleblanc101",
     "short_name": "mrleblanc101",
-    "id": "./?source=pwa&version=2",
+    "description": "Un développeur Front-end qui conçoit des produits numériques depuis 2017.",
+    "id": "./?version=2",
     "start_url": "./?source=pwa",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#09090b",
+    "theme_color": "#09090b",
     "icons": [
         {
             "src": "icon-192.png",
@@ -22,8 +27,5 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ],
-    "theme_color": "#09090b",
-    "background_color": "#09090b",
-    "display": "standalone"
+    ]
 }
