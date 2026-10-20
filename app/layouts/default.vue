@@ -21,6 +21,26 @@ useHead({
             content:
                 'Bonjour, je suis Sébastien LeBlanc. Un développeur Front-end qui conçoit des produits numériques depuis 2017.',
         },
+        {
+            property: 'og:image',
+            content: 'https://mrleblanc101.github.io/og-image.jpg',
+        },
+        {
+            property: 'og:image:width',
+            content: '1200',
+        },
+        {
+            property: 'og:image:height',
+            content: '630',
+        },
+        {
+            property: 'og:image:alt',
+            content: 'Sébastien LeBlanc',
+        },
+        {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+        },
     ],
     link: [
         {
