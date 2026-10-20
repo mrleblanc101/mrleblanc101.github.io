@@ -10,10 +10,16 @@
 
 <script lang="ts" setup>
 const { baseURL } = useRuntimeConfig().app;
+const colorMode = useColorMode();
 
 useHead({
     title: 'Sébastien LeBlanc',
     meta: [
+        {
+            // Status bar color on iOS/Android, matches the header (bg-zinc-100 / dark:bg-zinc-900)
+            name: 'theme-color',
+            content: () => (colorMode.value === 'dark' ? '#18181b' : '#f4f4f5'),
+        },
         {
             name: 'viewport',
             content: 'width=device-width, initial-scale=1.0',
