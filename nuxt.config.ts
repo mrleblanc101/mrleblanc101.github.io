@@ -43,6 +43,12 @@ export default defineNuxtConfig({
         },
     },
 
+    runtimeConfig: {
+        public: {
+            gitShortSha: '0000000',
+        },
+    },
+
     colorMode: {
         preference: 'dark',
         fallback: 'dark',
