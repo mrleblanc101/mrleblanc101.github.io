@@ -18,7 +18,7 @@ useHead({
         {
             // Status bar color on iOS/Android, matches the header (bg-zinc-100 / dark:bg-zinc-900)
             name: 'theme-color',
-            content: () => (colorMode.value === 'dark' ? '#18181b' : '#f4f4f5'),
+            content: () => (colorMode.value === 'dark' ? '#0000ff' : '#0000ff'),
         },
         {
             name: 'viewport',
