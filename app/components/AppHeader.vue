@@ -1,7 +1,7 @@
 <template>
     <header
-        class="z-20 border-b bg-zinc-100 transition-colors duration-300 dark:bg-zinc-900"
-        :class="$route.name !== 'index' ? 'border-zinc-200 dark:border-zinc-800' : 'border-transparent'"
+        class="sticky top-0 z-20 border-b bg-zinc-100 transition-colors duration-300 dark:bg-zinc-900"
+        :class="$route.name !== 'index' || stuck ? 'border-zinc-200 dark:border-zinc-800' : 'border-transparent'"
     >
         <div class="mx-auto flex w-full max-w-(--breakpoint-2xl) items-center gap-10 px-4 lg:px-8">
             <Transition
@@ -89,6 +89,10 @@ import IHamburger from '@/assets/svg/hamburger.svg?component';
 
 const route = useRoute();
 const appConfig = useAppConfig();
+
+// The header is sticky: on the home page, its border only shows once content scrolls under it
+const { y } = useWindowScroll();
+const stuck = computed(() => y.value > 0);
 
 const menuOpened = ref(false);
 const menuBtn = ref(null);
