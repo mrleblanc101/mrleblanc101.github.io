@@ -51,6 +51,10 @@ useHead({
             type: 'image/svg+xml',
         },
         {
+            rel: 'apple-touch-icon',
+            href: `${baseURL}apple-touch-icon.png`,
+        },
+        {
             rel: 'manifest',
             href: `${baseURL}manifest.webmanifest`,
         },
