@@ -9,6 +9,8 @@
 </template>
 
 <script lang="ts" setup>
+const { baseURL } = useRuntimeConfig().app;
+
 useHead({
     title: 'Sébastien LeBlanc',
     meta: [
@@ -45,12 +47,12 @@ useHead({
     link: [
         {
             rel: 'icon',
-            href: '/favicon.svg',
+            href: `${baseURL}favicon.svg`,
             type: 'image/svg+xml',
         },
         {
             rel: 'manifest',
-            href: '/manifest.json',
+            href: `${baseURL}manifest.webmanifest`,
         },
     ],
     htmlAttrs: {

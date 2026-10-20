@@ -1,0 +1,29 @@
+{
+    "name": "mrleblanc101",
+    "short_name": "mrleblanc101",
+    "id": "./?source=pwa&version=2",
+    "start_url": "./?source=pwa",
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "maskable_icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone"
+}
